@@ -85,7 +85,7 @@
 			aliquam maxime Necessitatibus quas aliquam maxime
 		</p>
 
-		<img class="object-cover h-56 w-full" src="src/lib/assets/neighborhood_door.jpg" alt="" />
+		<img class="object-cover h-56 w-full" src="/src/lib/assets/neighborhood_door.jpg" alt="" />
 	</div>
 </section>
 
