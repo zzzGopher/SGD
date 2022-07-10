@@ -1,6 +1,7 @@
 <script type="ts">
 	import door1 from '$lib/assets/door1.jpg';
 	import door2 from '$lib/assets/local_beach_door.jpg';
+	import door3 from '$lib/assets/neighborhood_door.jpg';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
@@ -68,11 +69,11 @@
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
 		</p>
-		<img class="object-cover h-56 w-full" src="src/lib/assets/door1.jpg" alt="" />
+		<img class="object-cover h-56 w-full" src={door3} alt="" />
 
 		<h2 class=" float-right font-light text-medium col-span-2 text-center">About Us</h2>
 
-		<img class=" h-56 object-cover w-full" src="src/lib/assets/local_beach_door.jpg" alt="" />
+		<img class=" h-56 object-cover w-full" src={door1} alt="" />
 		<p class="w-full pr-2 font-light text-super_small text-left">
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
@@ -85,7 +86,7 @@
 			aliquam maxime Necessitatibus quas aliquam maxime
 		</p>
 
-		<img class="object-cover h-56 w-full" src="/src/lib/assets/neighborhood_door.jpg" alt="" />
+		<img class="object-cover h-56 w-full" src={door2} alt="" />
 	</div>
 </section>
 
