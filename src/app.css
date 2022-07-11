@@ -11,7 +11,7 @@
 		font-size: 90px;
 	}
 	.wrapper {
-		@apply bg-transparent max-w-screen-2xl m-auto grid auto-cols-auto min-h-screen gap-16 my-16;
+		@apply bg-transparent max-w-screen-2xl m-auto grid auto-cols-auto  min-h-screen gap-16 my-16 sm:my-0 sm:gap-0;
 	}
 
 	.unhidden {
@@ -24,7 +24,7 @@
 	h2,
 	h3,
 	p {
-		max-width: 40ch;
+		max-width: 50ch;
 	}
 }
 

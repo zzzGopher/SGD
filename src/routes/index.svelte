@@ -2,6 +2,7 @@
 	import door1 from '$lib/assets/door1.jpg';
 	import door2 from '$lib/assets/local_beach_door.jpg';
 	import door3 from '$lib/assets/neighborhood_door.jpg';
+	import vector from '$lib/assets/Vector 3.svg';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
@@ -28,33 +29,72 @@
 	});
 </script>
 
-<section class="m-auto max-w-7xl sm:py-[150px] py-8 wrapper">
-	<div class="flex px-2 sm:justify-center justify-start ">
+<!--Oklahoma Box-->
+<div class="absolute top-64 w-0 left-0">
+	<div
+		class="hidden relative 2xl:w-20 2xl:h-[22em] sm:flex flex-col justify-center items-center w-16 h-72 bg-primary"
+	>
+		<span class="uppercase 2xl:text-C2xl text-Cxl rotate-90 font-thin">Oklahoma</span>
+	</div>
+</div>
+<!--Oklahoma Box End-->
+<section class="m-auto min-h-min sm:min-h-screen max-w-7xl sm:py-0 py-8 wrapper">
+	<!--Vector mid-->
+	<div class="hidden -z-10 opacity-50 2xl:block top-0 left-[50%] fixed w-auto h-auto">
+		<img class="h-[800px]" src={vector} alt="" />
+	</div>
+	<!--Vector mid-->
+	<!--Vector first-->
+	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[10%] fixed w-auto h-auto">
+		<img class="h-[400px]" src={vector} alt="" />
+	</div>
+	<!--Vector first-->
+	<!--Vector Second-->
+	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[30%] fixed w-auto h-auto">
+		<img class="h-[400px]" src={vector} alt="" />
+	</div>
+	<!--Vector Second-->
+	<!--Vector 4th-->
+	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[30%] absolute w-auto h-auto">
+		<img class="h-[600px]" src={vector} alt="" />
+	</div>
+	<!--Vector 4th-->
+	<!--Vector 5th-->
+	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[10%] absolute w-auto h-auto">
+		<img class="h-[600px]" src={vector} alt="" />
+	</div>
+	<!--Vector 5th-->
+	<div class="flex  relative sm:flex-col sm:gap-4 px-2 items-end sm:items-center justify-center  ">
 		<h1
-			class="text-white relative text-center leading-[1.1] text-medium sm:text-medium sm:w-max font-bold "
+			class="text-white relative text-C5xl text-center leading-[1.1] sm:text-C2xl sm:w-max font-bold "
 		>
 			Serving All Of Green Country
 		</h1>
+
+		<button
+			class="hidden sm:flex h-11 bg-primary rounded w-32 items-center justify-center text-white font-medium text-Cmd"
+			>Call Us!</button
+		>
 	</div>
 
-	<div class="flex relative justify-center px-8 items-center">
-		<button class="h-11 text-small text-white font-medium bg-primary rounded w-32"
+	<div class="flex sm:hidden relative sm:h-min justify-center px-8 sm:items-center">
+		<button class="h-11 sm:hidden text-Cmd text-white font-medium bg-primary rounded w-32"
 			><a href="/contact">Call Us</a></button
 		>
 
 		<!--Buttton  -->
-		<div class="absolute right-0 sm:top-[-24px]  top-[-23px]  self-start w-20 h-20 sm:w-32">
+		<div class="absolute right-0 sm:top-[-15rem]  top-[-23px]  self-start w-20 h-20 sm:w-32">
 			<div class="flex  items-center flex-col ">
-				<div class="reviews sm:text-small  text-smallest uppercase text-primary font-bold">
+				<div class="reviews sm:text-Cbase text-smallest uppercase text-primary font-bold">
 					reviews
 				</div>
 				<div
-					class="flex pt-2 flex-col items-center  justify-center bg-accent rounded w-full h-full"
+					class="flex sm:h-28 pt-2 flex-col items-center  justify-center bg-accent rounded w-full h-full"
 				>
-					<Icon icon="ant-design:star-filled" height={34} color="white" />
+					<Icon class="sm:h-10" icon="ant-design:star-filled" height={34} color="white" />
 					<div
 						bind:this={el}
-						class="text-medium_small text-white font-extrabold z-[5] select-none transition-colors duration-100 ease-in-ot"
+						class="text-Cbase text-white font-extrabold z-[5] select-none transition-colors duration-100 ease-in-ot"
 					>
 						{REVIEW_NUMBER}
 					</div>
@@ -63,30 +103,83 @@
 		</div>
 		<!--Buttton End -->
 	</div>
-	<div class="grid relative grid-cols-2  gap-4 text-white">
-		<h2 class=" text-center font-light text-medium col-span-2">View Our Work</h2>
-		<p class="w-full font-light text-super_small pl-2 text-right">
-			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
-			aliquam maxime Necessitatibus quas aliquam maxime
-		</p>
-		<img class="object-cover h-56 w-full" src={door3} alt="" />
+	<div
+		class="grid sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-cols-2 sm:grid-cols-3 sm:pt-0  gap-4 text-white"
+	>
+		<h2
+			class="sm:hidden sm:col-span-1 sm:z-10 sm:items-center sm:justify-center sm:bg-primary sm:h-12 sm:w-32 sm:rounded text-center  font-light text-Cxl sm:text-Cbase sm:col-start-2 sm:row-start-1 col-span-2"
+		>
+			Gallery
+		</h2>
 
-		<h2 class=" float-right font-light text-medium col-span-2 text-center">About Us</h2>
-
-		<img class=" h-56 object-cover w-full" src={door1} alt="" />
-		<p class="w-full pr-2 font-light text-super_small text-left">
-			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
-			aliquam maxime Necessitatibus quas aliquam maxime
-		</p>
-
-		<h2 class=" float-right font-light text-medium col-span-2 text-center">Services</h2>
-
-		<p class="w-full pl-2 font-light text-super_small text-right">
+		<p class="w-full font-light text-sm sm:hidden sm:text-Csm pl-2 text-right">
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
 		</p>
 
-		<img class="object-cover h-56 w-full" src={door2} alt="" />
+		<div
+			class="flex sm:col-start-2 sm:row-start-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
+		>
+			<div class="hidden sm:flex justify-center w-full  h-10">
+				<button
+					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
+					>Gallery</button
+				>
+			</div>
+			<img
+				class="object-cover sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-picW sm:w-picW"
+				src={door3}
+				alt=""
+			/>
+		</div>
+
+		<h2
+			class="sm:hidden float-right z-10 font-light text-Cxl sm:col-span-1 col-span-2 text-center sm:col-start-1 sm:row-start-1"
+		>
+			About Us
+		</h2>
+
+		<div class="flex relative sm:h-full sm:w-full flex-col justify-end items-center">
+			<div class="hidden sm:flex justify-center w-full  h-10">
+				<button
+					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
+					>About Us</button
+				>
+			</div>
+			<img
+				class="w-full sm:col-start-1   sm:row-start-1 h-picW sm:w-picW object-bottom sm:h-3/4  object-cover "
+				src={door1}
+				alt=""
+			/>
+		</div>
+		<p class="w-full pr-2 sm:hidden font-light text-sm sm:text-Csm text-left">
+			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
+			aliquam maxime Necessitatibus quas aliquam maxime
+		</p>
+
+		<h2
+			class=" sm:items-center sm:justify-center sm:text-Csm sm:bg-primary sm:rounded sm:h-10 sm:w-28 float-right  font-light text-Cxl sm:col-span-1 z-10 col-span-2 text-center sm:col-start-3 sm:hidden  sm:row-start-1 "
+		>
+			Services
+		</h2>
+
+		<p class="w-full  pl-2 sm:hidden font-light text-sm sm:text-Csm text-right">
+			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
+			aliquam maxime Necessitatibus quas aliquam maxime
+		</p>
+		<div class="flex relative sm:h-full sm:w-full flex-col justify-end items-center">
+			<div class="hidden sm:flex justify-center w-full  h-10">
+				<button
+					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
+					>Services</button
+				>
+			</div>
+			<img
+				class="img_beach object-cover sm:self-end sm:col-start-3 sm:row-start-1  justify-self-end w-full sm:h-3/4 h-picW sm:w-picW"
+				src={door2}
+				alt=""
+			/>
+		</div>
 	</div>
 </section>
 

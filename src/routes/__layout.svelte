@@ -42,7 +42,7 @@
 		<!-- Slider End
 		
 		-->
-		<nav class="m-auto py-8">
+		<nav class="m-auto pt-8">
 			<div
 				class="min-w-full sm:justify-between flex h-20 justify-start sm:gap-0 gap-4 items-center"
 			>
@@ -57,11 +57,11 @@
 						<Icon class="" height={28} icon="ci:hamburger" />
 					</div></button
 				><a href="/">
-					<header class="text-white text-medium_small uppercase font-extralight ">
+					<header class="text-white text-Clg uppercase font-extralight ">
 						Sapulpa Garage <br class="sm:hidden" /> Doors
 					</header></a
 				>
-				<ul class="hidden sm:visible text-white text-smallest sm:flex w-52 justify-between">
+				<ul class="hidden sm:visible text-white text-Cxs sm:flex w-52 justify-around gap-4 ">
 					{#each indexRefs as index, i}
 						<li>{index.name}</li>
 					{/each}
@@ -82,15 +82,15 @@ End Icon
 
 <slot />
 
-<div class="flex h-24 flex-col gap-2 py-8 bg-accent  justify-center items-center">
+<div class="flex h-24 flex-col gap-2 py-8 bg-footer_color  justify-center items-center">
 	<a href="/" class="hover:text-black text-gray-500">
-		<Icon color="white" icon="akar-icons:facebook-fill" width={28} /></a
+		<Icon color="black" icon="akar-icons:facebook-fill" width={28} /></a
 	>
 	<div class="flex w-full flex-row items-center justify-around">
-		<a href="/" class="text-white hover_footer text-xs sm:text-lg">Instagram</a>
-		<a class="sm:text-2xl text-white hover:text-black" href="/">Developed by &#169 Frogip</a><a
+		<a href="/" class="text-black hover_footer text-xs sm:text-lg">Instagram</a>
+		<a class="sm:text-2xl text-black hover:text-black" href="/">Developed by &#169 Frogip</a><a
 			href="/"
-			class="text-white hover_footer text-xs sm:text-lg">Instagram</a
+			class="text-black hover_footer text-xs sm:text-lg">Instagram</a
 		>
 	</div>
 </div>
