@@ -14,9 +14,9 @@
 
 	let indexRefs = [
 		{ name: 'Home', href: '/' },
-		{ name: 'About', href: '/About' },
-		{ name: 'Gallery', href: '/Gallery' },
-		{ name: 'Contact', href: '/Contact' }
+		{ name: 'About', href: '/about' },
+		{ name: 'Gallery', href: '/gallery' },
+		{ name: 'Contact', href: '/contact' }
 	];
 </script>
 
@@ -28,7 +28,7 @@
 		{#if hider}
 			<div
 				transition:fly={{ x: 500, duration: 1000 }}
-				class="nav_slide flex flex-col items-center pt-40 text-2xl justify-start gap-40 z-10 transition-all bg-primary h-screen right-0 absolute w-1/2"
+				class="nav_slide fixed flex flex-col items-center py-40 text-2xl justify-around gap-40 z-20 transition-all bg-primary h-screen right-0  w-1/2"
 			>
 				{#each indexRefs as index, i}
 					<a

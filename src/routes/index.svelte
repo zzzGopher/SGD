@@ -104,7 +104,7 @@
 		<!--Buttton End -->
 	</div>
 	<div
-		class="grid sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-cols-2 sm:grid-cols-3 sm:pt-0  gap-4 text-white"
+		class="grid sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-flow-row sm:grid-cols-3 sm:pt-0  gap-4 text-white"
 	>
 		<h2
 			class="sm:hidden sm:col-span-1 sm:z-10 sm:items-center sm:justify-center sm:bg-primary sm:h-12 sm:w-32 sm:rounded text-center  font-light text-Cxl sm:text-Cbase sm:col-start-2 sm:row-start-1 col-span-2"
@@ -112,13 +112,15 @@
 			Gallery
 		</h2>
 
-		<p class="w-full font-light text-sm sm:hidden sm:text-Csm pl-2 text-right">
+		<p
+			class="w-full col-span-2 text-center font-light text-sm sm:hidden sm:text-Csm place-self-center "
+		>
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
 		</p>
 
 		<div
-			class="flex sm:col-start-2 sm:row-start-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
+			class="flex h-72 w-full p-4 sm:p-0 sm:col-span-1 col-span-2 sm:col-start-2 sm:row-start-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
 		>
 			<div class="hidden sm:flex justify-center w-full  h-10">
 				<button
@@ -127,7 +129,7 @@
 				>
 			</div>
 			<img
-				class="object-cover sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-picW sm:w-picW"
+				class="object-cover rounded-md  sm:rounded-none sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
 				src={door3}
 				alt=""
 			/>
@@ -138,24 +140,29 @@
 		>
 			About Us
 		</h2>
+		<p
+			class="w-full place-self-center text-center col-span-2 sm:hidden font-light text-sm sm:text-Csm"
+		>
+			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
+			aliquam maxime Necessitatibus quas aliquam maxime
+		</p>
 
-		<div class="flex relative sm:h-full sm:w-full flex-col justify-end items-center">
-			<div class="hidden sm:flex justify-center w-full  h-10">
+		<div
+			class="flex h-72 relative p-4 sm:p-0 sm:col-span-1 col-span-2 sm:h-full sm:w-full flex-col justify-end items-center"
+		>
+			<div class="hidden z-10 sm:flex justify-center w-full  h-10">
 				<button
 					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
 					>About Us</button
 				>
 			</div>
+
 			<img
-				class="w-full sm:col-start-1   sm:row-start-1 h-picW sm:w-picW object-bottom sm:h-3/4  object-cover "
+				class="w-full h-full relative sm:rounded-none rounded-md picCenter sm:col-start-1 sm:row-start-1  sm:w-picW sm:object-bottom sm:h-3/4  object-cover "
 				src={door1}
 				alt=""
 			/>
 		</div>
-		<p class="w-full pr-2 sm:hidden font-light text-sm sm:text-Csm text-left">
-			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
-			aliquam maxime Necessitatibus quas aliquam maxime
-		</p>
 
 		<h2
 			class=" sm:items-center sm:justify-center sm:text-Csm sm:bg-primary sm:rounded sm:h-10 sm:w-28 float-right  font-light text-Cxl sm:col-span-1 z-10 col-span-2 text-center sm:col-start-3 sm:hidden  sm:row-start-1 "
@@ -163,19 +170,23 @@
 			Services
 		</h2>
 
-		<p class="w-full  pl-2 sm:hidden font-light text-sm sm:text-Csm text-right">
+		<p
+			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-sm sm:text-Csm "
+		>
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
 		</p>
-		<div class="flex relative sm:h-full sm:w-full flex-col justify-end items-center">
-			<div class="hidden sm:flex justify-center w-full  h-10">
+		<div
+			class="flex h-72 sm:p-0 p-4 col-span-2 sm:col-span-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
+		>
+			<div class="hidden z-10 sm:flex justify-center w-full  h-10">
 				<button
 					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
 					>Services</button
 				>
 			</div>
 			<img
-				class="img_beach object-cover sm:self-end sm:col-start-3 sm:row-start-1  justify-self-end w-full sm:h-3/4 h-picW sm:w-picW"
+				class=" relative rounded-md sm:rounded-none h-full object-cover sm:self-end sm:col-start-3 sm:row-start-1  justify-self-center w-full sm:h-3/4  sm:w-picW"
 				src={door2}
 				alt=""
 			/>
@@ -195,4 +206,7 @@
 
   -->
 <style>
+	.picCenter {
+		object-position: 0 70%;
+	}
 </style>
