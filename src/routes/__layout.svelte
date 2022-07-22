@@ -1,8 +1,7 @@
 <script>
 	import '../app.css';
 	import Icon from '@iconify/svelte';
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+
 	import { fly } from 'svelte/transition';
 
 	let hider = false;
@@ -62,7 +61,7 @@
 					</header></a
 				>
 				<ul class="hidden sm:visible text-white text-Cxs sm:flex w-52 justify-around gap-4 ">
-					{#each indexRefs as index, i}
+					{#each indexRefs as index}
 						<li>{index.name}</li>
 					{/each}
 				</ul>
@@ -104,12 +103,5 @@ End Icon
 		transform: scale(1.3);
 		font-weight: 700;
 		color: black;
-	}
-
-	.hider {
-		visibility: visible;
-		transform: translateX(100%);
-		transition: transform 2s ease-in;
-		opacity: 1;
 	}
 </style>

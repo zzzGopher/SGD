@@ -1,20 +1,20 @@
-<script type="ts">
+<script lang="ts">
 	import { onMount } from 'svelte';
 
-	let val: number = '';
+	let val: any = '';
 
 	let el: any;
 
-	function Person(element: any, options: any) {
+	function Person(this: any, element: any, options: any) {
 		this.element = element;
 		this.data = [this.element.dataset.typewriter.split('')];
 		this.speed = options?.speed || 150;
 		this.delay = options?.delay || 1500;
 		this.repeat = options?.repeat;
 
-		this.wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+		this.wait = (ms: any) => new Promise((resolve) => setTimeout(resolve, ms));
 
-		this.typeWrite = async function typeWrite(data) {
+		this.typeWrite = async function typeWrite(data: []) {
 			for (const letter of data) {
 				this.element.textContent += letter;
 				await this.wait(this.speed);
@@ -29,11 +29,11 @@
 	}
 
 	onMount(() => {
-		const newTyper = new Person(el, { speed: 80, repeat: true });
+		const newTyper = new (Person as any)(el, { speed: 80, repeat: true });
 		newTyper.initTyping();
 	});
 
-	export let TypeWriter = undefined;
+	export const TypeWriter = undefined;
 	export let yourText = 'fast';
 </script>
 

@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import door1 from '$lib/assets/door1.jpg';
 	import door2 from '$lib/assets/local_beach_door.jpg';
 	import door3 from '$lib/assets/neighborhood_door.jpg';
@@ -9,11 +9,11 @@
 	const REVIEW_NUMBER: number = 0;
 	let el: any;
 
-	function numberCounter(element: any, speed: number) {
+	function numberCounter(this: any, element: any, speed: number) {
 		this.element = element;
 		this.speed = speed;
 
-		this.prom = (ms) => new Promise((res) => setTimeout(res, speed));
+		this.prom = () => new Promise((res) => setTimeout(res, speed));
 
 		this.runCount = async function runCount() {
 			for (let i = 0; i <= 77; i++) {
@@ -24,7 +24,7 @@
 	}
 
 	onMount(() => {
-		const newCounter = new numberCounter(el, 50);
+		const newCounter = new (<any>numberCounter)(el, 50);
 		newCounter.runCount();
 	});
 </script>
