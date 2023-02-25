@@ -52,7 +52,7 @@
   -->
 
 				<button on:click={navDisplay} class="w-10  h-auto sm:hidden self-start text-primary"
-					><div label="Nav Toggle" class=" relative z-10 self-start">
+					><div class=" relative z-10 self-start">
 						<Icon class="" height={28} icon="ci:hamburger" />
 					</div></button
 				><a href="/">
