@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import './app.css';
 	import Icon from '@iconify/svelte';
 
 	import { fly } from 'svelte/transition';
