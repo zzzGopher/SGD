@@ -5,6 +5,8 @@
 	import vector from '$lib/assets/Vector 3.svg';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
+	import Distributor from '../lib/assets/components/DistributorsBanner.svelte';
+	import Testimonials from '../lib/assets/components/Testimonials.svelte';
 
 	const REVIEW_NUMBER: number = 0;
 	let el: any;
@@ -32,13 +34,13 @@
 <!--Oklahoma Box-->
 <div class="absolute top-64 w-0 left-0">
 	<div
-		class="hidden relative 2xl:w-20 2xl:h-[22em] sm:flex flex-col justify-center items-center w-16 h-72 bg-primary"
+		class="hidden relative 2xl:w-20 2xl:h-[22em] sm:flex flex-col justify-center items-center w-12 h-40  md:w-16 md:h-72 bg-primary"
 	>
-		<span class="uppercase 2xl:text-C2xl text-Cxl rotate-90 font-thin">Oklahoma</span>
+		<span class="uppercase 2xl:text-C2xl md:text-C2xl text-Cmd rotate-90 font-thin">Oklahoma</span>
 	</div>
 </div>
 <!--Oklahoma Box End-->
-<section class="m-auto min-h-min sm:min-h-screen max-w-7xl sm:py-0 py-8 wrapper">
+<section class="m-auto min-h-min sm:min-h-screen max-w-7xl  py-8 sm:my-20 md:my-40 wrapper">
 	<!--Vector mid-->
 	<div class="hidden -z-10 opacity-50 2xl:block top-0 left-[50%] fixed w-auto h-auto">
 		<img class="h-[800px]" src={vector} alt="" />
@@ -192,6 +194,8 @@
 			/>
 		</div>
 	</div>
+	<Distributor />
+	<Testimonials />
 </section>
 
 <!--  
