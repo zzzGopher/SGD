@@ -1,8 +1,4 @@
 <script lang="ts">
-	import door1 from '$lib/assets/door1.jpg';
-	import door2 from '$lib/assets/local_beach_door.jpg';
-	import door3 from '$lib/assets/neighborhood_door.jpg';
-	import vector from '$lib/assets/Vector 3.svg';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 	import Distributor from '../lib/assets/components/DistributorsBanner.svelte';

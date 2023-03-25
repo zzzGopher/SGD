@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { cubicOut } from 'svelte/easing';
 	import LeftArrowIcon from './LeftArrowIcon.svelte';
 	import RightArrowIcon from './RightArrowIcon.svelte';
 	import type { svg_size } from './svg_size';
-	import { writable } from 'svelte/store';
 
 	let Images = [
 		{ id: 0, pic: 'door1.jpg' },
