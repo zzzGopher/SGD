@@ -1,13 +1,13 @@
 <script type="ts">
-	import image1 from '$lib/assets/house_image.jpg';
-	import image2 from '$lib/assets/house_image2.jpg';
-	import image3 from '$lib/assets/white_Image.jpg';
+	// import image1 from '/house_image.jpg';
+	// import image2 from '/house_image2.jpg';
+	// import image3 from '/white_Image.jpg';
 </script>
 
 <div class="grid grid-flow-row justify-items-center">
 	<div class="row_2 h-min relative">
 		<div class="pic_container relative h-1/2  w-screen">
-			<img class="h-96 relative  mx-auto w-full object-cover" src={image1} alt="" />
+			<img class="h-96 relative  mx-auto w-full object-cover" src="/house_image.jpg" alt="" />
 			<h1
 				class="max-w-7xl absolute font-bold text-white right-0 pb-2 left-0 top-10 text-C3xl z-10 mx-auto px-8"
 			>
@@ -29,7 +29,7 @@
 	</div>
 	<div class="row_2 realtive">
 		<div class="pic_container relative h-40  w-screen">
-			<img class="h-40 pic_2  mx-auto w-full object-cover" src={image2} alt="" />
+			<img class="h-40 pic_2  mx-auto w-full object-cover" src="/house_image2.jpg" alt="" />
 			<h1
 				class=" absolute h-auto text-center md:right-0 left-0 top-14 md:top-10 text-Cxl font-bold text-white z-10 mx-auto px-8"
 			>
@@ -48,7 +48,7 @@
 	</div>
 	<div class="row_2 realtive">
 		<div class="pic_container relative h-40  w-screen">
-			<img class="h-40  mx-auto w-full object-cover" src={image3} alt="" />
+			<img class="h-40  mx-auto w-full object-cover" src="/white_Image.jpg" alt="" />
 			<h1
 				class="max-w-7xl absolute left-0 right-0 top-14  md:top-10 font-bold text-Cxl z-10 mx-auto px-8"
 			>

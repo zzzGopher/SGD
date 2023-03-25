@@ -1,16 +1,17 @@
 <script lang="ts">
+	// import Garaga from '/src/lib/assets/garaga_finalp.svg';
 </script>
 
 <!-- markup (zero or more items) goes here -->
 <div class="md:py-12 flex flex-col justify-center items-center gap-2">
-	<h3 class="text-Clg text-white">Our Distributors</h3>
+	<h3 class="text-Clg p-4 text-white">Our Products</h3>
 	<div
-		class="dist_anchors_parent flex items-center justify-center gap-4 bg-white w-full h-12 font-bold italic text-secondary"
+		class="dist_anchors_parent flex items-center justify-center gap-4 bg-primary w-full h-24 font-bold italic text-white text-Csm sm:text-Cbase "
 	>
-		<div class="a">Door Link</div>
-		<div class="a">C.H.I Doors</div>
-		<div class="a">Garaga</div>
-		<div class="a">Mid America</div>
+		<a href="https://doorlinkmfg.com/">Door Link</a>
+		<a href="https://www.chiohd.com/">C.H.I Doors</a>
+		<a href="/"><img src="garaga_finalp.svg" alt="Link to garaga doors home page" /></a>
+		<a href="/">Mid America</a>
 	</div>
 </div>
 

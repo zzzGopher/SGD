@@ -25,6 +25,7 @@
 	h3,
 	p {
 		max-width: 50ch;
+		margin: 0;
 	}
 }
 
@@ -33,5 +34,17 @@
 		font-family: Inter;
 		overflow-x: hidden;
 		@apply bg-secondary;
+	}
+
+	html #gallery {
+		background-image: url('background.svg');
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		background-size: 80rem;
+	}
+	@media only screen and (min-width: 768px) {
+		html #gallery {
+			background-size: 170rem;
+		}
 	}
 }

@@ -6,9 +6,10 @@
 
 	let hider = false;
 
+	//toggles the nav bar.
+
 	function navDisplay() {
 		hider = !hider;
-		console.log(hider);
 	}
 
 	let indexRefs = [
@@ -52,17 +53,17 @@
   -->
 
 				<button on:click={navDisplay} class="w-10  h-auto sm:hidden self-start text-primary"
-					><div class=" relative z-10 self-start">
+					><div class=" relative mt-1.5 z-10 self-start">
 						<Icon class="" height={28} icon="ci:hamburger" />
 					</div></button
 				><a href="/">
 					<header class="text-white text-Clg uppercase font-extralight ">
 						Sapulpa Garage <br class="sm:hidden" /> Doors
-					</header></a
-				>
-				<ul class="hidden sm:visible text-white text-Cxs sm:flex w-52 justify-around gap-4 ">
+					</header>
+				</a>
+				<ul class="hidden sm:visible text-white text-Cxs sm:flex w-min justify-around gap-4 ">
 					{#each indexRefs as index}
-						<li>{index.name}</li>
+						<li><a href={index.href}>{index.name}</a></li>
 					{/each}
 				</ul>
 			</div>

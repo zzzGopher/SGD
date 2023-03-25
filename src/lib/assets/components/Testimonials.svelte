@@ -29,11 +29,11 @@
 </script>
 
 <section>
-	<div class="bg-white py-24 sm:py-32">
+	<div class="">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-xl text-center">
-				<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight text-primary">
-					Testimonials
+				<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight p-4 text-primary">
+					Google Reviews
 				</h2>
 				<p class="font-custom2 mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 					We have worked with thousands of amazing people

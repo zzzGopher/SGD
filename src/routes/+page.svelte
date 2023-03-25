@@ -11,14 +11,14 @@
 	const REVIEW_NUMBER: number = 0;
 	let el: any;
 
-	function numberCounter(this: any, element: any, speed: number) {
+	function numberCounter(this: any, element: any, speed: number): void {
 		this.element = element;
 		this.speed = speed;
 
 		this.prom = () => new Promise((res) => setTimeout(res, speed));
 
 		this.runCount = async function runCount() {
-			for (let i = 0; i <= 77; i++) {
+			for (let i = 0; i <= 84; i++) {
 				element.textContent = i;
 				await this.prom(this.speed);
 			}
@@ -26,7 +26,7 @@
 	}
 
 	onMount(() => {
-		const newCounter = new (<any>numberCounter)(el, 50);
+		const newCounter = new (numberCounter as any)(el, 50);
 		newCounter.runCount();
 	});
 </script>
@@ -43,35 +43,41 @@
 <section class="m-auto min-h-min sm:min-h-screen max-w-7xl  py-8 sm:my-20 md:my-40 wrapper">
 	<!--Vector mid-->
 	<div class="hidden -z-10 opacity-50 2xl:block top-0 left-[50%] fixed w-auto h-auto">
-		<img class="h-[800px]" src={vector} alt="" />
+		<img class="h-[800px]" src="vector 3.svg" alt="" />
 	</div>
 	<!--Vector mid-->
 	<!--Vector first-->
 	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[10%] fixed w-auto h-auto">
-		<img class="h-[400px]" src={vector} alt="" />
+		<img class="h-[400px]" src="vector 3.svg" alt="" />
 	</div>
 	<!--Vector first-->
 	<!--Vector Second-->
 	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[30%] fixed w-auto h-auto">
-		<img class="h-[400px]" src={vector} alt="" />
+		<img class="h-[400px]" src="vector 3.svg" alt="" />
 	</div>
 	<!--Vector Second-->
 	<!--Vector 4th-->
 	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[30%] absolute w-auto h-auto">
-		<img class="h-[600px]" src={vector} alt="" />
+		<img class="h-[600px]" src="vector 3.svg" alt="" />
 	</div>
 	<!--Vector 4th-->
 	<!--Vector 5th-->
 	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[10%] absolute w-auto h-auto">
-		<img class="h-[600px]" src={vector} alt="" />
+		<img class="h-[600px]" src="vector 3.svg" alt="" />
 	</div>
 	<!--Vector 5th-->
-	<div class="flex  relative sm:flex-col sm:gap-4 px-2 items-end sm:items-center justify-center  ">
+	<div class="flex  relative flex-col sm:gap-4 px-2 items-end sm:items-center justify-center  ">
 		<h1
 			class="text-white relative text-C5xl text-center leading-[1.1] sm:text-C2xl sm:w-max font-bold "
 		>
 			Serving All Of Green Country
 		</h1>
+		<h2
+			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 font-bold text-accent max-w-prose"
+		>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, ac at faucibus in tellus
+			egestas tincidunt gravida ultrices.
+		</h2>
 
 		<button
 			class="hidden sm:flex h-11 bg-primary rounded w-32 items-center justify-center text-white font-medium text-Cmd"
@@ -132,7 +138,7 @@
 			</div>
 			<img
 				class="object-cover rounded-md  sm:rounded-none sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
-				src={door3}
+				src="neighborhood_door.jpg"
 				alt=""
 			/>
 		</div>
@@ -161,7 +167,7 @@
 
 			<img
 				class="w-full h-full relative sm:rounded-none rounded-md picCenter sm:col-start-1 sm:row-start-1  sm:w-picW sm:object-bottom sm:h-3/4  object-cover "
-				src={door1}
+				src="door1.jpg"
 				alt=""
 			/>
 		</div>
@@ -189,7 +195,7 @@
 			</div>
 			<img
 				class=" relative rounded-md sm:rounded-none h-full object-cover sm:self-end sm:col-start-3 sm:row-start-1  justify-self-center w-full sm:h-3/4  sm:w-picW"
-				src={door2}
+				src="local_beach_door.jpg"
 				alt=""
 			/>
 		</div>
