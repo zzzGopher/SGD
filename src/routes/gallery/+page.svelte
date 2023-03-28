@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Slider from './Components/Slider.svelte';
+	import GalleryHeader from './Components/GalleryHeader/GalleryHeader.svelte';
 
 	import rectangleBG from '$lib/assets/Rectangle59.svg';
 
@@ -14,14 +15,7 @@
 <html lang="UTF-8" id="gallery">
 	<section class="m-auto min-h-min sm:min-h-screen max-w-7xl  py-8 sm:my-20 md:my-40 wrapper">
 		<div class="flex gap-8 p-4 flex-col items-start  justify-center w-full py-8">
-			<h1 class="text-C2xl font-bold text-white">Our Gallery</h1>
-
-			<p class=" text-accent font-bold text-left">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas assumenda maiores enim
-				consequuntur id sit. Vero quam maxime reprehenderit adipisci, vel itaque in sapiente non.
-				Dolore quos nemo vel ab!
-			</p>
-
+			<GalleryHeader />
 			<Slider />
 			<DoorTypes colors={doorColors} />
 
@@ -29,7 +23,7 @@
 				><PhoneIcon height={20} width={20} /> Call For Pricing & Availability</button
 			>
 		</div>
-		<img class="absolute h-auto bottom-0 -z-10 right-0" src={rectangleBG} alt="" />
+		<img class="absolute h-auto bottom-0 -z-10 right-0" src={'rectangleBG'} alt="" />
 	</section></html
 >
 

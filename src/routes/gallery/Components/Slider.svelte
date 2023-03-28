@@ -31,7 +31,8 @@
 				e.preventDefault();
 				e.stopPropagation();
 			};
-			console.log(e);
+
+			let elem = e.target.style;
 
 			picWidth = e.target.getBoundingClientRect().width;
 			grab = !grab;
@@ -47,7 +48,6 @@
 	const moving = (e: any) => {
 		if (isMoving) {
 			const currentPos = e.clientX;
-			console.log(`our current position is : ${currentPos}`);
 
 			currentTranslate = prevTranslate + currentPos - initialPos;
 		}
@@ -66,16 +66,6 @@
 		if (movedBy < -100 && currentIndex < slideArr.length - 1) currentIndex += 1;
 
 		if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
-
-		console.log(`
-		our event type is ${e.type},
-		our amount we move by is : ${movedBy} \n
-		our prevTranslate is : ${prevTranslate} \n
-		our currentTranslate is : ${currentTranslate} \n
-		our initialPos is : ${initialPos} \n
-		our currentIndex is : ${currentIndex}\n
-		our inner window width is ${window.innerWidth}`);
-		console.log(picWidth);
 
 		setPositionByIndex();
 	};
@@ -116,8 +106,6 @@
 		prevTranslate = newTranslate;
 		const numSlides = slideArr.length;
 
-		console.log(slideWidth);
-
 		if (direction === 'left' && currentIndex > 0) {
 			currentIndex--;
 		} else if (direction === 'right' && currentIndex < numSlides - 1) {
@@ -130,10 +118,10 @@
 
 <!-- markup (zero or more items) goes here -->
 
-<div class="flex items-center relative justify-center w-full">
+<div class="flex  items-center relative justify-center w-full">
 	<LeftArrowIcon on:click={() => handleButtons('left')} size={svg} color={'#ffff'} />
 	<ul class="slider-container" class:grabbing class:grab on:drag={stopWeird}>
-		<li class="slide">
+		<li class="slide rounded-xl">
 			{#each Images as door, i (door.id)}
 				<img
 					src={door.pic}
@@ -141,9 +129,9 @@
 					class="slider-images max-h-[450px] min-h-[450px] sm:min-h-[700px] sm:h-[950px]"
 					bind:this={slideArr[i]}
 					id={door.id.toString()}
-					on:mousedown={(event) => initialized(event, i)()}
 					on:mousemove={moving}
 					on:mouseup={concluded}
+					on:mousedown={(e) => initialized(e, i)()}
 				/>
 			{/each}
 		</li>

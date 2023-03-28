@@ -6,7 +6,11 @@
 <div class="door-types-container justify-between gap-4 flex flex-row w-full">
 	<div class="flex flex-col w-auto h-full items-start justify-center">
 		<span class="available text-Clg text-accent font-extrabold text-left">Available</span>
-		<h4 class="colors-h4 text-left text-C6xl leading-10 text-white font-extrabold">Colors</h4>
+		<h4
+			class="colors-h4 text-left sm:leading-[4rem] sm:text-C4xl text-C6xl leading-10 text-white font-extrabold"
+		>
+			Colors
+		</h4>
 	</div>
 	<div class="color-box flex flex-row w-auto gap-2 h-full items-center">
 		{#each colors as color, i}<span style="background-color:{`#${color.color}`}" />{/each}
