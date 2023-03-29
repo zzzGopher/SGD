@@ -3,9 +3,9 @@
 	import GalleryHeader from './Components/GalleryHeader/GalleryHeader.svelte';
 	import rectangleBG from '$lib/assets/Rectangle59.svg';
 	import PhoneIcon from '$lib/assets/Phone.svelte';
-	import DoorTypes from './Components/DoorTypes.svelte/DoorTypes.svelte';
-	import type { colors } from './Components/DoorTypes.svelte/types';
-	import LargeSlider from './Components/LargeSlider.svelte';
+	import DoorTypes from './Components/DoorTypes/DoorTypes.svelte';
+	import type { colors } from './Components/DoorTypes/types';
+	import LargeSlider from './Components/LargeSlider/LargeSlider.svelte';
 	import Selector from './Components/GallerySelector/Selector.svelte';
 	import { active } from './Components/GallerySelector/MenuActiveStore';
 
@@ -18,8 +18,8 @@
 </script>
 
 <html lang="UTF-8" id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
-	<section class="m-auto min-h-min sm:min-h-screen max-w-7xl  py-8 wrapper">
-		<div class=" flex gap-8 p-4 flex-col items-start  justify-center w-full py-8">
+	<section class="md:hidden m-auto min-h-min sm:min-h-screen max-w-7xl  py-8 wrapper">
+		<div class=" flex gap-8 p-4 flex-col items-start  justify-center w-full py-8 ">
 			<GalleryHeader />
 			<Selector />
 			<Slider />
@@ -31,8 +31,15 @@
 			>
 		</div>
 		<img class="absolute h-auto bottom-0 -z-10 right-0" src={'rectangleBG'} alt="" />
-	</section></html
->
+	</section>
+	<!--Large Screen Section-->
+</html>
+<div class="wrapper justify-center">
+	<section class="hidden md:grid grid-flow-row gap-16 mt-52">
+		<LargeSlider />
+		<div class="bottom-grid-container flex w-full"><Selector /></div>
+	</section>
+</div>
 
 <style>
 </style>
