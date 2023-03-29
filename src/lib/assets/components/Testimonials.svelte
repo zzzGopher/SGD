@@ -1,5 +1,4 @@
 <script lang="ts" context="module">
-	import Testimonials from './Testimonials.svelte';
 	const testimonials = [
 		{
 			body: 'Damaged my overhead shop door by accidentally backing into it.  Sapulpa Garage Door quickly replaced it.  Friendly service, fair price, and great work. They clean up the area and haul away the debris.  These are the guys to call.',

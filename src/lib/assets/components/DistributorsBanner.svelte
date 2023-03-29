@@ -1,8 +1,6 @@
 <script lang="ts">
-	// import Garaga from '/src/lib/assets/garaga_finalp.svg';
 </script>
 
-<!-- markup (zero or more items) goes here -->
 <div class="md:py-12 flex flex-col justify-center items-center gap-2">
 	<h3 class="text-Clg p-4 text-white">Our Products</h3>
 	<div

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Slider from './Components/Slider.svelte';
 	import GalleryHeader from './Components/GalleryHeader/GalleryHeader.svelte';
-	import rectangleBG from '$lib/assets/Rectangle59.svg';
 	import PhoneIcon from '$lib/assets/Phone.svelte';
 	import DoorTypes from './Components/DoorTypes/DoorTypes.svelte';
 	import type { colors } from './Components/DoorTypes/types';
