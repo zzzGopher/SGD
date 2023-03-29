@@ -33,7 +33,7 @@
 	</section>
 	<!--Large Screen Section-->
 </html>
-<div class="wrapper justify-center">
+<div class="hidden md:wrapper justify-center">
 	<section class="hidden md:grid grid-flow-row gap-16 mt-52">
 		<LargeSlider />
 		<div class="bottom-grid-container flex w-full"><Selector /></div>
