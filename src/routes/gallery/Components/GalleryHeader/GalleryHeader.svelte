@@ -6,5 +6,5 @@
 
 	<span class="text-black text-Cxl font-bold text-left tracking-widest">Get an idea</span>
 	<span class=" text-accent text-Cxl font-bold text-left tracking-widest">of what you</span>
-	<span class="text-white text-Cxl font-bold text-left tracking-widest mb-8">need</span>
+	<span class="text-white text-Cxl font-bold text-left tracking-widest ">need</span>
 </div>

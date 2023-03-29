@@ -118,7 +118,7 @@
 
 <!-- markup (zero or more items) goes here -->
 
-<div class="flex  items-center relative justify-center w-full">
+<div class="flex md:hidden  items-center relative justify-center w-full">
 	<LeftArrowIcon on:click={() => handleButtons('left')} size={svg} color={'#ffff'} />
 	<ul class="slider-container" class:grabbing class:grab on:drag={stopWeird}>
 		<li class="slide rounded-xl">
@@ -126,7 +126,7 @@
 				<img
 					src={door.pic}
 					alt=""
-					class="slider-images max-h-[450px] min-h-[450px] sm:min-h-[700px] sm:h-[950px]"
+					class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px]"
 					bind:this={slideArr[i]}
 					id={door.id.toString()}
 					on:mousemove={moving}
