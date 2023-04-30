@@ -12,7 +12,9 @@
 </script>
 
 <div class="selector-container w-full">
-	<ul class="hidden list-container md:flex justify-around items-center">
+	<ul
+		class="hidden list-container h-auto pt-4 md:flex justify-start gap-2 text-center items-center whitespace-nowrap"
+	>
 		<li class="list-items">Popular</li>
 		<li class="list-items">Steel on Steel</li>
 		<li class="list-items">Residential</li>
@@ -33,7 +35,7 @@
 		<ul
 			class:active
 			transition:fade={{ duration: 500, easing: quintInOut }}
-			class="dropdown-list-container flex-col hidden  w-52 h-40 rounded-xl bg-white text-center mt-60 absolute z-10 items-center justify-center shadow-xl "
+			class="dropdown-list-container flex-col hidden w-52 h-40 rounded-xl bg-white text-center mt-60 absolute z-10 items-center justify-center shadow-xl"
 		>
 			<li class="dropdown-list-items rounded-t-xl"><span>Popular</span></li>
 			<li class="dropdown-list-items"><span>Steel on steel</span></li>
@@ -50,7 +52,7 @@
 		@apply bg-opacity-40;
 	}
 	.list-items {
-		@apply bg-accent w-auto p-2 rounded;
+		@apply bg-accent w-auto p-2 rounded-md;
 	}
 	.dropdown-list-items {
 		@apply w-full h-12 flex items-center justify-center;

@@ -28,57 +28,66 @@
 </script>
 
 <!--Oklahoma Box-->
-<div class="absolute top-64 w-0 left-0">
+<div class="absolute invisible 2xl:visible top-0 w-0 left-0">
 	<div
-		class="hidden relative 2xl:w-20 2xl:h-[22em] sm:flex flex-col justify-center items-center w-12 h-40  md:w-16 md:h-72 bg-primary"
+		class="hidden relative 2xl:w-20 2xl:h-[22em] sm:flex flex-col justify-center items-center w-12 h-40 md:w-16 md:h-[88mm] bg-primary"
 	>
-		<span class="uppercase 2xl:text-C2xl md:text-C2xl text-Cmd rotate-90 font-thin">Oklahoma</span>
+		<span class="uppercase 2xl:text-C2xl md:text-C2xl text-Cmd rotate-90 font-thin text-white"
+			>Oklahoma</span
+		>
 	</div>
 </div>
-<!--Oklahoma Box End-->
-<section class="m-auto min-h-min sm:min-h-screen max-w-7xl  py-8 sm:my-20 md:my-40 wrapper">
-	<!--Vector mid-->
-	<div class="hidden -z-10 opacity-50 2xl:block top-0 left-[50%] fixed w-auto h-auto">
-		<img class="h-[800px]" src="vector 3.svg" alt="" />
+
+<!--Middle svg Line-->
+<div class="absolute flex items-center justify-center w-full top-0 m-auto">
+	<div class="hidden -z-10 opacity-50 2xl:block top-0 w-auto relative h-auto m-auto">
+		<img class="h-[600px]" src="Vector 3.svg" alt="" />
 	</div>
+</div>
+
+<!--Oklahoma Box End-->
+<section class="m-auto min-h-min sm:min-h-screen max-w-7xl py-8 sm:my-20 md:my-40 wrapper">
+	<!--Vector mid-->
+
 	<!--Vector mid-->
 	<!--Vector first-->
-	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[10%] fixed w-auto h-auto">
-		<img class="h-[400px]" src="vector 3.svg" alt="" />
+	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[10%] absolute w-auto h-auto">
+		<img class="h-[400px]" src="Vector 3.svg" alt="" />
 	</div>
 	<!--Vector first-->
 	<!--Vector Second-->
-	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[30%] fixed w-auto h-auto">
-		<img class="h-[400px]" src="vector 3.svg" alt="" />
+	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[30%] absolute w-auto h-auto">
+		<img class="h-[400px]" src="Vector 3.svg" alt="" />
 	</div>
 	<!--Vector Second-->
 	<!--Vector 4th-->
 	<div class="hidden 2xl:block opacity-50 top-0 -z-10 left-[30%] absolute w-auto h-auto">
-		<img class="h-[600px]" src="vector 3.svg" alt="" />
+		<img class="h-[600px]" src="Vector 3.svg" alt="" />
 	</div>
 	<!--Vector 4th-->
 	<!--Vector 5th-->
 	<div class="hidden 2xl:block opacity-50 top-0 -z-10 right-[10%] absolute w-auto h-auto">
-		<img class="h-[600px]" src="vector 3.svg" alt="" />
+		<img class="h-[600px]" src="Vector 3.svg" alt="" />
 	</div>
 	<!--Vector 5th-->
-	<div class="flex  relative flex-col sm:gap-4 px-2 items-end sm:items-center justify-center  ">
+	<div class="flex relative flex-col sm:gap-4 px-2 items-end sm:items-center justify-center">
 		<h1
-			class="text-white relative text-C5xl text-center leading-[1.1] sm:text-C2xl sm:w-max font-bold "
+			class="text-white relative text-C5xl text-center leading-[1.1] sm:text-C2xl sm:w-max font-bold"
 		>
 			Serving All Of Green Country
 		</h1>
 		<h2
-			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 font-bold text-accent max-w-prose"
+			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 font-bold text-accent max-w-prose sm:px-12"
 		>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, ac at faucibus in tellus
 			egestas tincidunt gravida ultrices.
 		</h2>
 
 		<button
-			class="hidden sm:flex h-11 bg-primary rounded w-32 items-center justify-center text-white font-medium text-Cmd"
+			class="hidden sm:flex h-11 bg-primary rounded w-32 items-center justify-center text-white font-medium text-Cmd mb-8"
 			>Call Us!</button
 		>
+		<img class="h-20 hidden 2xl:block" src="arrows_down.svg" alt="" />
 	</div>
 
 	<div class="flex sm:hidden relative sm:h-min justify-center px-8 sm:items-center">
@@ -87,13 +96,13 @@
 		>
 
 		<!--Buttton  -->
-		<div class="absolute right-0 sm:top-[-15rem]  top-[-23px]  self-start w-20 h-20 sm:w-32">
-			<div class="flex  items-center flex-col ">
+		<div class="absolute right-0 sm:top-[-15rem] top-[-23px] self-start w-20 h-20 sm:w-32">
+			<div class="flex items-center flex-col">
 				<div class="reviews sm:text-Cbase text-smallest uppercase text-primary font-bold">
 					reviews
 				</div>
 				<div
-					class="flex sm:h-28 pt-2 flex-col items-center  justify-center bg-accent rounded w-full h-full"
+					class="flex sm:h-28 pt-2 flex-col items-center justify-center bg-accent rounded w-full h-full"
 				>
 					<Icon class="sm:h-10" icon="ant-design:star-filled" height={34} color="white" />
 					<div
@@ -108,16 +117,16 @@
 		<!--Buttton End -->
 	</div>
 	<div
-		class="grid sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-flow-row sm:grid-cols-3 sm:pt-0  gap-4 text-white"
+		class="grid sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-flow-row sm:grid-cols-3 sm:pt-0 gap-4 text-white px-2"
 	>
 		<h2
-			class="sm:hidden sm:col-span-1 sm:z-10 sm:items-center sm:justify-center sm:bg-primary sm:h-12 sm:w-32 sm:rounded text-center  font-light text-Cxl sm:text-Cbase sm:col-start-2 sm:row-start-1 col-span-2"
+			class="sm:hidden sm:col-span-1 sm:z-10 sm:items-center sm:justify-center sm:bg-primary sm:h-12 sm:w-32 sm:rounded text-center font-light text-Cxl sm:text-Cbase sm:col-start-2 sm:row-start-1 col-span-2"
 		>
 			Gallery
 		</h2>
 
 		<p
-			class="w-full col-span-2 text-center font-light text-sm sm:hidden sm:text-Csm place-self-center "
+			class="w-full col-span-2 text-center font-light text-sm sm:hidden sm:text-Csm place-self-center"
 		>
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
@@ -126,14 +135,14 @@
 		<div
 			class="flex h-72 w-full p-4 sm:p-0 sm:col-span-1 col-span-2 sm:col-start-2 sm:row-start-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
 		>
-			<div class="hidden sm:flex justify-center w-full  h-10">
+			<div class="hidden sm:flex justify-center w-full h-10">
 				<button
-					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
+					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded absolute mt-5"
 					>Gallery</button
 				>
 			</div>
 			<img
-				class="object-cover rounded-md  sm:rounded-none sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
+				class="object-cover rounded-md sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
 				src="neighborhood_door.jpg"
 				alt=""
 			/>
@@ -154,28 +163,28 @@
 		<div
 			class="flex h-72 relative p-4 sm:p-0 sm:col-span-1 col-span-2 sm:h-full sm:w-full flex-col justify-end items-center"
 		>
-			<div class="hidden z-10 sm:flex justify-center w-full  h-10">
+			<div class="hidden z-10 sm:flex justify-center w-full h-10">
 				<button
-					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
+					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded absolute mt-5"
 					>About Us</button
 				>
 			</div>
 
 			<img
-				class="w-full h-full relative sm:rounded-none rounded-md picCenter sm:col-start-1 sm:row-start-1  sm:w-picW sm:object-bottom sm:h-3/4  object-cover "
+				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
 				src="door1.jpg"
 				alt=""
 			/>
 		</div>
 
 		<h2
-			class=" sm:items-center sm:justify-center sm:text-Csm sm:bg-primary sm:rounded sm:h-10 sm:w-28 float-right  font-light text-Cxl sm:col-span-1 z-10 col-span-2 text-center sm:col-start-3 sm:hidden  sm:row-start-1 "
+			class=" sm:items-center sm:justify-center sm:text-Csm sm:bg-primary sm:rounded sm:h-10 sm:w-28 float-right font-light text-Cxl sm:col-span-1 z-10 col-span-2 text-center sm:col-start-3 sm:hidden sm:row-start-1"
 		>
 			Services
 		</h2>
 
 		<p
-			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-sm sm:text-Csm "
+			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-sm sm:text-Csm"
 		>
 			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
 			aliquam maxime Necessitatibus quas aliquam maxime
@@ -183,14 +192,14 @@
 		<div
 			class="flex h-72 sm:p-0 p-4 col-span-2 sm:col-span-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
 		>
-			<div class="hidden z-10 sm:flex justify-center w-full  h-10">
+			<div class="hidden z-10 sm:flex justify-center w-full h-10">
 				<button
-					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded  absolute mt-5 "
+					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded absolute mt-5"
 					>Services</button
 				>
 			</div>
 			<img
-				class=" relative rounded-md sm:rounded-none h-full object-cover sm:self-end sm:col-start-3 sm:row-start-1  justify-self-center w-full sm:h-3/4  sm:w-picW"
+				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
 				src="local_beach_door.jpg"
 				alt=""
 			/>

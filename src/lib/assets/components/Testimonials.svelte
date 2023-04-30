@@ -5,7 +5,7 @@
 			author: {
 				name: 'Doug Jones',
 				handle: 'Doug Jones',
-				imagePath: 'src/lib/assets/DougJonesSGD_customer.png'
+				imagePath: './DougJonesSGD_customer.png'
 			}
 		},
 		{
@@ -13,7 +13,7 @@
 			author: {
 				name: 'quickhay',
 				handle: 'quickhay',
-				imagePath: 'src/lib/assets/quickhaySGD_customer.png'
+				imagePath: '/quickhaySGD_customer.png'
 			}
 		},
 		{
@@ -21,7 +21,7 @@
 			author: {
 				name: 'Alex Houdashelt',
 				handle: 'Alex Houdashelt',
-				imagePath: 'src/lib/assets/AlexSGD_customer.png'
+				imagePath: './AlexSGD_customer.png'
 			}
 		}
 	];
@@ -31,7 +31,7 @@
 	<div class="">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-xl text-center">
-				<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight p-4 text-primary">
+				<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight pb-4 text-primary">
 					Google Reviews
 				</h2>
 				<p class="font-custom2 mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -42,7 +42,7 @@
 				<div class="-mt-8 sm:-mx-4 sm:columns-2 sm:text-0 lg:columns-3" />
 				{#each testimonials as testimonial (testimonial.author.handle)}
 					<div class="pt-8 sm:inline-block sm:w-full sm:px-4">
-						<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6 ">
+						<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
 							<blockquote class=" text-gray-900">
 								<p>
 									<span class="font-custom font-medium text-Cbase">"</span>{testimonial.body}<span

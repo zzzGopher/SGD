@@ -18,10 +18,10 @@
 	}
 </script>
 
-<div class="hidden large-slider-container w-full justify-center md:flex gap-2">
+<div class="hidden m-auto large-slider-container w-full justify-center md:flex gap-2 p-2">
 	{#each Images as pic, i (pic.id)}
 		{#if i === 0}
-			<div class="large-slider-image-container ">
+			<div class="large-slider-image-container">
 				<img
 					in:fade={{ duration: 1500, easing: quintInOut }}
 					on:mousedown={(e) => chosenPic(e, i)}
@@ -38,7 +38,7 @@
 					src={pic.pic}
 					alt=""
 					class="large-slider-image2 object-cover w-40 min-h-[600px] max-h-[600px]
-					hover:bg-accent transition-all duration-300  ease-in-out cursor-pointer"
+					hover:bg-accent transition-all duration-300 ease-in-out cursor-pointer"
 				/>
 			</div>
 		{/if}

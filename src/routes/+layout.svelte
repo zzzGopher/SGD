@@ -28,7 +28,7 @@
 		{#if hider}
 			<div
 				transition:fly={{ x: 500, duration: 1000 }}
-				class="nav_slide fixed flex flex-col items-center py-40 text-2xl justify-around gap-40 z-20 transition-all bg-primary h-screen right-0  w-1/2"
+				class="nav_slide fixed flex flex-col items-center py-40 text-2xl justify-around gap-40 z-20 transition-all bg-primary h-screen right-0 w-1/2"
 			>
 				{#each indexRefs as index, i}
 					<a
@@ -52,16 +52,20 @@
 
   -->
 
-				<button on:click={navDisplay} class="w-10  h-auto sm:hidden self-start text-primary"
-					><div class=" relative mt-1.5 z-10 self-start">
+				<button on:click={navDisplay} class="w-10 h-auto sm:hidden self-start text-primary">
+					<div class=" relative mt-1.5 z-10 self-start">
 						<Icon class="" height={28} icon="ci:hamburger" />
-					</div></button
-				><a href="/">
-					<header class="text-white text-Clg uppercase font-extralight ">
-						Sapulpa Garage <br class="sm:hidden" /> Doors
+					</div>
+				</button>
+				<a class="z-50" href="/">
+					<header class="text-white text-Clg uppercase font-extralight">
+						Sapulpa
+						<br class="sm:hidden" /> Garage Doors
 					</header>
 				</a>
-				<ul class="hidden sm:visible text-white text-Cxs sm:flex w-min justify-around gap-4 ">
+				<ul
+					class="invisible sm:visible z-50 text-white text-Cxs sm:flex w-min justify-around gap-4"
+				>
 					{#each indexRefs as index}
 						<li><a href={index.href}>{index.name}</a></li>
 					{/each}
@@ -82,7 +86,8 @@ End Icon
 
 <slot />
 
-<div class="flex h-24 flex-col gap-2 py-8 bg-footer_color  justify-center items-center">
+<!--Footer-->
+<div class="flex h-24 flex-col gap-2 py-8 bg-footer_color justify-center items-center">
 	<a href="/" class="hover:text-black text-gray-500">
 		<Icon color="black" icon="akar-icons:facebook-fill" width={28} /></a
 	>

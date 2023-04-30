@@ -3,11 +3,13 @@
 	export let colors: doorColors;
 </script>
 
-<div class="door-types-container justify-between gap-4 flex flex-row w-full">
+<div class="door-types-container justify-between gap-4 flex flex-row w-full md:w-auto md:gap-20">
 	<div class="flex flex-col w-auto h-full items-start justify-center">
-		<span class="available text-Clg text-accent font-extrabold text-left">Available</span>
+		<span class="available text-Clg md:text-Cbase text-accent font-extrabold text-left"
+			>Available</span
+		>
 		<h4
-			class="colors-h4 text-left sm:leading-[4rem] sm:text-C4xl text-C6xl leading-10 text-white font-extrabold"
+			class="colors-h4 text-left sm:leading-[4rem] sm:text-C4xl text-C6xl md:text-Cxl leading-10 text-white font-extrabold"
 		>
 			Colors
 		</h4>
