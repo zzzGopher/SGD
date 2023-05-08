@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="md:py-12 flex flex-col justify-center items-center gap-2">
+<div class=" flex flex-col justify-center items-center gap-2">
 	<h3 class="text-Clg p-4 text-white">Our Products</h3>
 	<div
 		class="dist_anchors_parent flex items-center justify-center gap-10 md:gap-20 w-full h-24 font-bold italic text-white text-Csm sm:text-Cbase bg-primary md:bg-transparent"

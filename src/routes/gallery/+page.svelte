@@ -36,7 +36,7 @@
 		<section class="hidden md:grid grid-flow-row mt-32">
 			<LargeSlider />
 
-			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 w-full">
+			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 min-w-full">
 				<div class="flex flex-col gap-2 items-start">
 					<h2 class="text-Cxl text-white">Powerful</h2>
 					<p class="text-accent text-Cbase font-bold">

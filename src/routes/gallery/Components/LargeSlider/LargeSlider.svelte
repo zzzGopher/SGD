@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { quintInOut } from 'svelte/easing';
-	import { fade, slide, fly } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 	let selected: boolean = false;
 
 	let Images = [

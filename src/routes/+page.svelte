@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import Distributor from '../lib/assets/components/DistributorsBanner.svelte';
 	import Testimonials from '../lib/assets/components/Testimonials.svelte';
+	import Button from '../lib/assets/components/Primary_button.svelte';
+	import Anchor from '../lib/assets/components/Anchor.svelte';
 
 	const REVIEW_NUMBER: number = 0;
 	let el: any;
@@ -83,10 +85,8 @@
 			egestas tincidunt gravida ultrices.
 		</h2>
 
-		<button
-			class="hidden sm:flex h-11 bg-primary rounded w-32 items-center justify-center text-white font-medium text-Cmd mb-8"
-			>Call Us!</button
-		>
+		<Button text="Call Us!" radius="lg" textSize="Csm" />
+
 		<img class="h-20 hidden 2xl:block" src="arrows_down.svg" alt="" />
 	</div>
 
@@ -136,10 +136,7 @@
 			class="flex h-72 w-full p-4 sm:p-0 sm:col-span-1 col-span-2 sm:col-start-2 sm:row-start-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
 		>
 			<div class="hidden sm:flex justify-center w-full h-10">
-				<button
-					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded absolute mt-5"
-					>Gallery</button
-				>
+				<Anchor href="/gallery" text="Gallery" padding={2} textSize="Csm" />
 			</div>
 			<img
 				class="object-cover rounded-md sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
@@ -164,10 +161,7 @@
 			class="flex h-72 relative p-4 sm:p-0 sm:col-span-1 col-span-2 sm:h-full sm:w-full flex-col justify-end items-center"
 		>
 			<div class="hidden z-10 sm:flex justify-center w-full h-10">
-				<button
-					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded absolute mt-5"
-					>About Us</button
-				>
+				<Anchor href="/about" text="About" padding={2} />
 			</div>
 
 			<img
@@ -193,10 +187,7 @@
 			class="flex h-72 sm:p-0 p-4 col-span-2 sm:col-span-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
 		>
 			<div class="hidden z-10 sm:flex justify-center w-full h-10">
-				<button
-					class="hidden sm:block bg-primary text-Csm w-28 justify-self-center h-10 rounded absolute mt-5"
-					>Services</button
-				>
+				<Anchor href="/contact" text="Location" padding={2} />
 			</div>
 			<img
 				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
@@ -208,6 +199,10 @@
 	<Distributor />
 	<Testimonials />
 </section>
+
+<svelte:head>
+	<title>Home</title>
+</svelte:head>
 
 <!--  
 

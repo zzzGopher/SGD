@@ -52,7 +52,7 @@
 		@apply bg-opacity-40;
 	}
 	.list-items {
-		@apply bg-accent w-auto p-2 rounded-md;
+		@apply bg-accent w-auto p-2 rounded-md shadow-sm shadow-black;
 	}
 	.dropdown-list-items {
 		@apply w-full h-12 flex items-center justify-center;

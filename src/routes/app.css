@@ -11,7 +11,7 @@
 		font-size: 90px;
 	}
 	.wrapper {
-		@apply bg-transparent max-w-screen-2xl m-auto grid auto-cols-auto justify-center min-h-screen gap-16 my-16 sm:my-0 sm:gap-0;
+		@apply bg-transparent max-w-screen-2xl m-auto grid auto-cols-auto justify-center min-h-screen gap-16 my-16 sm:my-0;
 	}
 
 	.unhidden {
@@ -42,9 +42,10 @@
 		background-position: bottom right;
 		background-size: 80rem;
 	}
+
 	@media only screen and (min-width: 768px) {
 		html #gallery {
-			background-size: 170rem;
+			background-size: 140rem;
 		}
 	}
 }
