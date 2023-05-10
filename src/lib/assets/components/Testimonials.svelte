@@ -51,48 +51,46 @@
 	];
 </script>
 
-<section>
-	<div class="">
-		<div class="mx-auto max-w-7xl px-6 lg:px-8">
-			<div class="mx-auto max-w-xl text-center">
-				<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight pb-4 text-primary">
-					Google Reviews
-				</h2>
-				<p class="font-custom2 mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					We have worked with thousands of amazing people
-				</p>
-			</div>
-			<div
-				class="mx-auto mt-16 grid grid-flow-row lg:grid-cols-2 lg:justify-center max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none"
-			>
-				<div class="-mt-8 sm:-mx-4 sm:text-0" />
-				{#each testimonials as testimonial (testimonial.author.Key)}
-					<div
-						class:start={testimonial.author.Key == 1}
-						class:second={testimonial.author.Key == 3}
-						class:middle={testimonial.author.Key == 2}
-						class="pt-8 sm:inline-block sm:w-full sm:px-4"
-					>
-						<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
-							<blockquote class="text-gray-900">
-								<span class="font-custom font-medium text-Cbase">"</span>{testimonial.body}
-								<span class="font-custom font-medium text-Cbase">"</span>
-							</blockquote>
-							<figcaption class="mt-6 flex items-center gap-x-4">
-								<img
-									class="h-10 w-10 rounded-full bg-gray-50"
-									src={testimonial.author.imagePath}
-									alt=""
-								/>
-								<div>
-									<div class="font-semibold text-gray-900">{testimonial.author.name}</div>
-									<div class="text-gray-600">{`@${testimonial.author.handle}`}</div>
-								</div>
-							</figcaption>
-						</figure>
-					</div>
-				{/each}
-			</div>
+<section class="relative">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div class="mx-auto max-w-xl text-center">
+			<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight pb-4 text-primary">
+				Google Reviews
+			</h2>
+			<p class="font-custom2 mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				We have worked with thousands of amazing people
+			</p>
+		</div>
+		<div
+			class="mx-auto mt-16 grid grid-flow-row lg:grid-cols-2 lg:justify-center max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none"
+		>
+			<div class="-mt-8 sm:-mx-4 sm:text-0" />
+			{#each testimonials as testimonial (testimonial.author.Key)}
+				<div
+					class:start={testimonial.author.Key == 1}
+					class:second={testimonial.author.Key == 3}
+					class:middle={testimonial.author.Key == 2}
+					class="pt-8 sm:inline-block sm:w-full sm:px-4"
+				>
+					<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+						<blockquote class="text-gray-900">
+							<span class="font-custom font-medium text-Cbase">"</span>{testimonial.body}
+							<span class="font-custom font-medium text-Cbase">"</span>
+						</blockquote>
+						<figcaption class="mt-6 flex items-center gap-x-4">
+							<img
+								class="h-10 w-10 rounded-full bg-gray-50"
+								src={testimonial.author.imagePath}
+								alt=""
+							/>
+							<div>
+								<div class="font-semibold text-gray-900">{testimonial.author.name}</div>
+								<div class="text-gray-600">{`@${testimonial.author.handle}`}</div>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+			{/each}
 		</div>
 	</div>
 </section>

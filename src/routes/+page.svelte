@@ -5,6 +5,7 @@
 	import Testimonials from '../lib/assets/components/Testimonials.svelte';
 	import Button from '../lib/assets/components/Primary_button.svelte';
 	import Anchor from '../lib/assets/components/Anchor.svelte';
+	import FreeToQuote from '$lib/assets/components/FreeToQuote.svelte';
 
 	const REVIEW_NUMBER: number = 0;
 	let el: any;
@@ -198,6 +199,7 @@
 	</div>
 	<Distributor />
 	<Testimonials />
+	<FreeToQuote />
 </section>
 
 <svelte:head>
@@ -218,5 +220,9 @@
 <style>
 	.picCenter {
 		object-position: 0 70%;
+	}
+	.quote-container::after {
+		content: '`';
+		@apply text-primary w-screen;
 	}
 </style>
