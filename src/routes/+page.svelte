@@ -6,6 +6,7 @@
 	import Button from '../lib/assets/components/Primary_button.svelte';
 	import Anchor from '../lib/assets/components/Anchor.svelte';
 	import FreeToQuote from '$lib/assets/components/FreeToQuote.svelte';
+	import ServicePhoto from '$lib/assets/components/ServicePhoto.svelte';
 
 	const REVIEW_NUMBER: number = 0;
 	let el: any;
@@ -49,7 +50,7 @@
 </div>
 
 <!--Oklahoma Box End-->
-<section class="m-auto min-h-min sm:min-h-screen max-w-7xl py-8 sm:my-20 md:my-40 wrapper">
+<section class="m-auto min-h-min sm:min-h-screen max-w-7xl pt-8 sm:mt-20 md:mt-40 wrapper">
 	<!--Vector mid-->
 
 	<!--Vector mid-->
@@ -118,7 +119,7 @@
 		<!--Buttton End -->
 	</div>
 	<div
-		class="grid sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-flow-row sm:grid-cols-3 sm:pt-0 gap-4 text-white px-2"
+		class="grid m-auto sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-flow-row sm:grid-cols-3 sm:pt-0 gap-4 text-white px-2"
 	>
 		<h2
 			class="sm:hidden sm:col-span-1 sm:z-10 sm:items-center sm:justify-center sm:bg-primary sm:h-12 sm:w-32 sm:rounded text-center font-light text-Cxl sm:text-Cbase sm:col-start-2 sm:row-start-1 col-span-2"
@@ -200,6 +201,7 @@
 	<Distributor />
 	<Testimonials />
 	<FreeToQuote />
+	<ServicePhoto />
 </section>
 
 <svelte:head>
@@ -220,9 +222,5 @@
 <style>
 	.picCenter {
 		object-position: 0 70%;
-	}
-	.quote-container::after {
-		content: '`';
-		@apply text-primary w-screen;
 	}
 </style>

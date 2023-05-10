@@ -72,7 +72,9 @@
 					class:middle={testimonial.author.Key == 2}
 					class="pt-8 sm:inline-block sm:w-full sm:px-4"
 				>
-					<figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+					<figure
+						class="rounded-2xl h-full flex flex-col justify-center bg-gray-50 p-8 text-sm leading-6 shadow-black shadow-md drop-shadow-sm"
+					>
 						<blockquote class="text-gray-900">
 							<span class="font-custom font-medium text-Cbase">"</span>{testimonial.body}
 							<span class="font-custom font-medium text-Cbase">"</span>
