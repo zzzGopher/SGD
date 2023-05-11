@@ -5,7 +5,7 @@
 	<h3 class="text-Clg text-white">Our Products</h3>
 </div>
 <div
-	class="dist_anchors_parent flex items-center justify-center gap-8 md:gap-20 w-full h-24 font-bold italic text-white text-base whitespace-nowrap sm:text-Cbase bg-primary"
+	class="dist_anchors_parent flex items-center justify-center gap-4 sm:gap-8 md:gap-20 w-full h-24 font-bold italic text-white text-[14px] whitespace-nowrap sm:text-Cbase bg-primary"
 >
 	<a href="https://doorlinkmfg.com/">Door Link</a>
 	<a href="https://www.chiohd.com/">C.H.I Doors</a>
