@@ -58,9 +58,9 @@
 					</div>
 				</button>
 				<a class="z-50" href="/">
-					<header class="text-white text-Clg uppercase font-extralight">
-						Sapulpa
-						<br class="sm:hidden" /> Garage Doors
+					<header class="text-white text-Clg uppercase whitespace-nowrap font-extralight">
+						Tulsa | Sapulpa
+						<br class="lg:hidden" /> Garage Doors
 					</header>
 				</a>
 				<ul

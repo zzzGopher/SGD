@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="services-container-anchor inline-block lg:mt-28 mt-10 h-56 sm:h-[290px] md:h-[340px] lg:h-[400px] xl:h-[500px] 2xl:h-[800px] relative w-screen"
+	class="services-container-anchor inline-block lg:mt-28 mt-10 h-44 sm:h-[290px] md:h-[340px] lg:h-[400px] xl:h-[500px] 2xl:h-[800px] relative w-screen"
 >
 	<div class="absolute right-0 h-full">
 		<div class="relative w-full h-full flex items-center justify-center">

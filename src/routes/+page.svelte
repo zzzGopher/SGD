@@ -87,7 +87,14 @@
 			egestas tincidunt gravida ultrices.
 		</h2>
 
-		<Button text="Call Us!" radius="lg" textSize="Csm" />
+		<Button
+			hidden="hidden"
+			width="28"
+			weight={'bold'}
+			text="Call Us!"
+			radius="lg"
+			textSize="Cbase"
+		/>
 
 		<img class="h-20 hidden 2xl:block" src="arrows_down.svg" alt="" />
 	</div>
@@ -98,7 +105,7 @@
 		>
 
 		<!--Buttton  -->
-		<div class="absolute right-0 sm:top-[-15rem] top-[-23px] self-start w-20 h-20 sm:w-32">
+		<div class="absolute right-0 sm:top-[-15rem] top-[-25px] self-start w-20 h-20 sm:w-32">
 			<div class="flex items-center flex-col">
 				<div class="reviews sm:text-Cbase text-smallest uppercase text-primary font-bold">
 					reviews
