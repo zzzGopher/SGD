@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let href: string = '/';
-	export let text: string = 'default';
-	export let textSize: string = 'Csm';
-	export let padding: number = 2;
+	export let href = '/';
+	export let text = 'default';
+	export let textSize = 'Csm';
+	export let padding = 2;
 </script>
 
 <a

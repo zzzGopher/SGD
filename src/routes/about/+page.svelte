@@ -4,6 +4,11 @@
 	// import image3 from '/white_Image.jpg';
 </script>
 
+<svelte:head>
+    <title>About</title>
+    <meta name="description" content="We are a local, family-owned, and operated garage door company with over 28 years of experience. We offer quality commercial and residential installation and repairs for doors and openers at competitive prices. We take great pride in our work and our customer's satisfaction."/>
+</svelte:head>
+
 <div class="grid grid-flow-row justify-items-center">
 	<div class="row_2 h-min relative">
 		<div class="pic_container relative h-1/2 w-screen">
@@ -19,9 +24,7 @@
 		</div>
 		<div class="flex relative h-min py-8 text-Cbase leading-8 max-w-7xl mx-auto px-8">
 			<p class="h-min text-Csm text-white">
-				We are a local, family owned and operated garage door company with over 28 years experience.
-				We offer quality commercial and residential installation and repairs for doors and openers
-				at competitive prices. We take great pride in our work and in our customers satisfaction.
+                We are a local, family-owned, and operated garage door company with over 28 years of experience. We offer quality commercial and residential installation and repairs for doors and openers at competitive prices. We take great pride in our work and our customer's satisfaction.
 			</p>
 		</div>
 	</div>
@@ -36,11 +39,7 @@
 		</div>
 		<div class="flex h-min py-8 text-Cbase leading-8 max-w-7xl mx-auto px-8">
 			<p class="h-min text-Csm text-white">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea unde minima voluptatum
-				eligendi. Tenetur recusandae tempora unde deleniti quam, facilis corrupti, aspernatur eaque
-				alias praesentium quae similique, in quasi maiores!eligendi. Tenetur recusandae tempora unde
-				deleniti quam, facilis corrupti, aspernatur eaque alias praesentium quae similique, in quasi
-				maiores!
+                Our commitment is to provide prompt and reliable assistance to all our valued clients, creating a long-term partnership founded on confidence and reliability. Our aim is to meet the requirements of each person with the utmost professionalism.
 			</p>
 		</div>
 	</div>
@@ -55,11 +54,7 @@
 		</div>
 		<div class="flex h-min py-8 text-Cbase leading-8 max-w-7xl mx-auto px-8">
 			<p class="h-min text-Csm text-white">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea unde minima voluptatum
-				eligendi. Tenetur recusandae tempora unde deleniti quam, facilis corrupti, aspernatur eaque
-				alias praesentium quae similique, in quasi maiores!eligendi. Tenetur recusandae tempora unde
-				deleniti quam, facilis corrupti, aspernatur eaque alias praesentium quae similique, in quasi
-				maiores!
+                Our Garage door business, founded by Justin Smith, has been running successfully for over 30 years in Sapulpa, Oklahoma. We take immense pride in our work and prioritize building long-lasting relationships with our clients. Our commitment to family values is reflected in the way we operate and our reputation as leading experts in the field.
 			</p>
 		</div>
 	</div>

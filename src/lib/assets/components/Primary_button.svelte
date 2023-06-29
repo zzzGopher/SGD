@@ -1,10 +1,10 @@
 <script lang="ts">
-	export let text: string = 'default';
-	export let radius: string = 'sm';
-	export let textSize: string = 'Cxs';
+	export let text = 'default';
+	export let radius = 'sm';
+	export let textSize = 'Cxs';
 	export let width: number | string = 'auto';
-	export let weight: string = 'default';
-	export let hidden: string = 'visible';
+	export let weight = 'default';
+	export let hidden = 'visible';
 </script>
 
 <button

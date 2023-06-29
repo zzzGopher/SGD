@@ -3,8 +3,10 @@
 	export let width: any;
 </script>
 
+
+<a href='tel:918-224-2323'>
 <svg
-	class="absolute left-[22mm]"
+	class="relative"
 	xmlns="http://www.w3.org/2000/svg"
 	{width}
 	{height}
@@ -21,4 +23,4 @@
 		stroke-linejoin="round"
 		stroke-width="16"
 	/></svg
->
+></a>

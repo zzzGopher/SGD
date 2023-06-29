@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
-
-export const active = writable(false);
+import type { Writable } from 'svelte/store';
+export const active: Writable<boolean> = writable(false);

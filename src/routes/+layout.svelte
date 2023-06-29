@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import './app.css';
 	import Icon from '@iconify/svelte';
-
 	import { fly } from 'svelte/transition';
 
-	let hider = false;
 
+
+
+	let hider = false;
 	//toggles the nav bar.
 
 	function navDisplay() {
@@ -18,6 +19,14 @@
 		{ name: 'Gallery', href: '/gallery' },
 		{ name: 'Contact', href: '/contact' }
 	];
+
+	//TODO There is a log here for the api because the layout renders on each page
+
+
+
+	// console.log(import.meta.env.CONTENTFUL);
+
+
 </script>
 
 <nav style:visibility="visible">
@@ -46,19 +55,15 @@
 			<div
 				class="min-w-full sm:justify-between flex h-20 justify-start sm:gap-0 gap-4 items-center"
 			>
-				<!--  
-
-	Icon
-
-  -->
-
-				<button on:click={navDisplay} class="w-10 h-auto sm:hidden self-start text-primary">
+				<!--  Icon  -->
+                
+                <button on:click={navDisplay} class="w-10 h-auto sm:hidden self-start text-primary">
 					<div class=" relative mt-1.5 z-10 self-start">
 						<Icon class="" height={28} icon="ci:hamburger" />
 					</div>
 				</button>
-				<a class="z-50" href="/">
-					<header class="text-white text-Clg uppercase whitespace-nowrap font-extralight">
+				<a class="z-10" href="/">
+					<header class="text-white z-20  text-Clg uppercase whitespace-nowrap font-extralight">
 						Tulsa | Sapulpa
 						<br class="lg:hidden" /> Garage Doors
 					</header>

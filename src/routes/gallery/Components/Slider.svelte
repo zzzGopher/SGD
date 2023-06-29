@@ -3,6 +3,7 @@
 	import RightArrowIcon from './RightArrowIcon.svelte';
 	import type { svg_size } from './svg_size';
 
+
 	let Images = [
 		{ id: 0, pic: 'door1.jpg' },
 		{ id: 1, pic: 'local_beach_door.jpg' },
@@ -11,16 +12,18 @@
 		{ id: 4, pic: 'house_image.jpg' }
 	];
 
-	let initialPos: number = 0,
-		prevTranslate: number = 0,
-		currentTranslate: number = 0,
-		isMoving: boolean = false,
+	export let myImages;
+
+	let initialPos = 0,
+		prevTranslate = 0,
+		currentTranslate = 0,
+		isMoving = false,
 		animationID: number,
 		slideArr: any[] = [],
 		grab = true,
 		grabbing = false,
-		currentIndex: number = 0,
-		picWidth: number = 0;
+		currentIndex = 0,
+		picWidth = 0;
 
 	const stopWeird = (e: any) => e.preventDefault();
 
@@ -122,22 +125,27 @@
 	<LeftArrowIcon on:click={() => handleButtons('left')} size={svg} color={'#ffff'} />
 	<ul class="slider-container" class:grabbing class:grab on:drag={stopWeird}>
 		<li class="slide rounded-xl">
-			{#each Images as door, i (door.id)}
+			{#await myImages}
+				<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
+				{:then Images}
+			{#each Images as door, i (door)}
 				<img
-					src={door.pic}
+					src={door}
 					alt=""
-					class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px]"
+					class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
 					bind:this={slideArr[i]}
-					id={door.id.toString()}
+					id={door.id}
 					on:mousemove={moving}
 					on:mouseup={concluded}
 					on:mousedown={(e) => initialized(e, i)()}
 				/>
 			{/each}
+				{/await}
 		</li>
 	</ul>
 	<RightArrowIcon on:click={() => handleButtons('right')} size={svg} color={'#ffff'} />
 </div>
+
 
 <!-- </ul> -->
 <style>
@@ -157,7 +165,7 @@
 		@apply h-full m-auto w-full  inline-flex items-center justify-center;
 	}
 	.slide {
-		@apply items-center h-full w-full flex-row inline-flex relative  overflow-hidden m-auto;
+		@apply items-center h-full w-full flex-row inline-flex relative overflow-hidden m-auto;
 	}
 	.grab {
 		cursor: grab;

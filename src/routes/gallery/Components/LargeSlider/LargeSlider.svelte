@@ -1,48 +1,94 @@
 <script lang="ts">
 	import { quintInOut } from 'svelte/easing';
 	import { fade, slide } from 'svelte/transition';
-	let selected: boolean = false;
+	import { onMount } from 'svelte';
 
-	let Images = [
-		{ id: 0, pic: 'door1.jpg' },
-		{ id: 1, pic: 'local_beach_door.jpg' },
-		{ id: 2, pic: 'neighborhood_door.jpg' },
-		{ id: 3, pic: 'small-house.jpg' },
-		{ id: 4, pic: 'house_image.jpg' }
-	];
+	export let myImages;
 
-	function chosenPic(e: any, i: number) {
-		e.preventDefault();
 
-		Images = [...Images.splice(i), ...Images];
-	}
+	$: images = myImages;
+
+	// console.log(myImages);
+
+	let testArr:any[] = [];
+
+	const makeImagesArr = (arr:string[]) => {
+		let limit = 0;
+
+		for (let start = 0; start < arr.length; start++) {
+			if (start < arr.length) {
+				testArr[limit] = arr[start]
+
+				if (start === 6) {
+					limit++;
+				}
+			}
+
+
+		}
+
+	};
+ async function turtle(){
+	 const response = await fetch('./api/contentful-api',{
+		 method:'POST',
+		 body: JSON.stringify({ ff:'this',triangle:45 }),
+		 headers: {
+			 'content-type':'application/json'
+		 }
+	 }).then((res) => res.json());
+
+	 console.log(response);
+ }
+
+ onMount(()=>
+ turtle()
+ );
+
+
+
+	makeImagesArr(myImages);
+
+	console.log(testArr);
+
+	//TODO add a way to load more images and optimize all web image sizes.
+
+
 </script>
 
-<div class="hidden m-auto large-slider-container w-full justify-center md:flex gap-2 p-2">
-	{#each Images as pic, i (pic.id)}
-		{#if i === 0}
-			<div class="large-slider-image-container">
-				<img
-					in:fade={{ duration: 1500, easing: quintInOut }}
-					on:mousedown={(e) => chosenPic(e, i)}
-					src={pic.pic}
-					alt=""
-					class="large-slider-image object-cover w-[800px] min-h-[600px] max-h-[600px]"
-				/>
-			</div>
-		{:else}
-			<div class="large-slider-image-container">
-				<img
-					in:slide={{ duration: 1500, easing: quintInOut, axis: 'x' }}
-					on:mousedown={(e) => chosenPic(e, i)}
-					src={pic.pic}
-					alt=""
-					class="large-slider-image2 object-cover w-40 min-h-[600px] max-h-[600px]
+<div
+	class="hidden min-w-full m-auto large-slider-container w-full justify-center md:flex gap-2 p-2"
+>
+	{#await images}
+		<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
+	{:then Images}
+		{#each Images as pic, i (pic)}
+			{#if i === 0}
+				<div class="large-slider-image-container">
+					<img
+						draggable="false"
+						in:fade={{ duration: 1500, easing: quintInOut }}
+						src={pic}
+						alt=""
+						class="large-slider-image object-cover w-[800px] min-h-[600px] max-h-[600px]"
+					/>
+				</div>
+			{:else}
+				<div class="large-slider-image-container">
+					<img
+						draggable="false"
+						in:slide={{ duration: 1500, easing: quintInOut, axis: 'x' }}
+						on:mousedown={() => {
+							return (Images = [...Images.splice(i), ...Images]);
+						}}
+						src={pic}
+						alt=""
+						class="large-slider-image2 object-cover w-40 min-h-[600px] max-h-[600px]
 					hover:bg-accent transition-all duration-300 ease-in-out cursor-pointer"
-				/>
-			</div>
-		{/if}
-	{/each}
+					/>
+				</div>
+			{/if}
+		{/each}
+	{/await}
 </div>
 
 <style>

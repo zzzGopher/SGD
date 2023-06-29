@@ -4,8 +4,9 @@
 	let val: any = '';
 
 	let el: any;
+	
 
-	function Person(this: any, element: any, options: any) {
+	function Writer(this: any, element: any, options: any) {
 		this.element = element;
 		this.data = [this.element.dataset.typewriter.split('')];
 		this.speed = options?.speed || 150;
@@ -29,11 +30,10 @@
 	}
 
 	onMount(() => {
-		const newTyper = new (Person as any)(el, { speed: 80, repeat: true });
+		const newTyper = new (Writer as any)(el, { speed: 80, repeat: true });
 		newTyper.initTyping();
 	});
 
-	export const TypeWriter = undefined;
 	export let yourText = 'fast';
 </script>
 

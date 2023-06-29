@@ -8,7 +8,7 @@
 	import FreeToQuote from '$lib/assets/components/FreeToQuote.svelte';
 	import ServicePhoto from '$lib/assets/components/ServicePhoto.svelte';
 
-	const REVIEW_NUMBER: number = 0;
+	const REVIEW_NUMBER = 0;
 	let el: any;
 
 	function numberCounter(this: any, element: any, speed: number): void {
@@ -18,7 +18,7 @@
 		this.prom = () => new Promise((res) => setTimeout(res, speed));
 
 		this.runCount = async function runCount() {
-			for (let i = 0; i <= 84; i++) {
+			for (let i = 0; i <= 88; i++) {
 				element.textContent = i;
 				await this.prom(this.speed);
 			}
@@ -29,7 +29,17 @@
 		const newCounter = new (numberCounter as any)(el, 50);
 		newCounter.runCount();
 	});
+
+
+
+
 </script>
+
+
+<svelte:head>
+    <title>Home</title>
+    <meta name="description" content="The Tulsa and Sapulpa Garage Doors company offers garage door installations and spring repairs to various areas in and around Tulsa, Oklahoma, and Sapulpa, Oklahoma. Our services extend to local areas such as Mannford, Mounds, Jenks, Sand Springs, Bixby, Owasso, Beggs, Okmulgee, Broken Arrow, Jennings, and many others."/>
+</svelte:head>
 
 <!--Oklahoma Box-->
 <div class="absolute invisible 2xl:visible top-0 w-0 left-0">
@@ -83,8 +93,7 @@
 		<h2
 			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 font-bold text-accent max-w-prose sm:px-12"
 		>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, ac at faucibus in tellus
-			egestas tincidunt gravida ultrices.
+            Rest assured that you will receive fair treatment and get all your questions answered when you request a free estimate from us!
 		</h2>
 
 		<Button
@@ -104,7 +113,7 @@
 			><a href="/contact">Call Us</a></button
 		>
 
-		<!--Buttton  -->
+		<!--Button  -->
 		<div class="absolute right-0 sm:top-[-15rem] top-[-25px] self-start w-20 h-20 sm:w-32">
 			<div class="flex items-center flex-col">
 				<div class="reviews sm:text-Cbase text-smallest uppercase text-primary font-bold">
@@ -123,7 +132,7 @@
 				</div>
 			</div>
 		</div>
-		<!--Buttton End -->
+		<!--Button End -->
 	</div>
 	<div
 		class="grid m-auto sm:h-[500px] sm:items-end sm:justify-items-center sm:grid-rows-1 relative grid-flow-row sm:grid-cols-3 sm:pt-0 gap-4 text-white px-2"
@@ -137,8 +146,7 @@
 		<p
 			class="w-full col-span-2 text-center font-light text-sm sm:hidden sm:text-Csm place-self-center"
 		>
-			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
-			aliquam maxime Necessitatibus quas aliquam maxime
+            Take a look at our gallery featuring a wide variety of door installations and repairs. Our collection includes residential and carriage doors with various styles to choose from. We have popular options for you to explore at your convenience. Thank you for considering us.
 		</p>
 
 		<div
@@ -162,8 +170,7 @@
 		<p
 			class="w-full place-self-center text-center col-span-2 sm:hidden font-light text-sm sm:text-Csm"
 		>
-			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
-			aliquam maxime Necessitatibus quas aliquam maxime
+            We are a local, family-owned, and operated garage door company with over 28 years of experience. We offer quality commercial and residential installation and repairs for doors and openers at competitive prices. We take great pride in our work and our customer's satisfaction.
 		</p>
 
 		<div
@@ -189,8 +196,7 @@
 		<p
 			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-sm sm:text-Csm"
 		>
-			Lorem ipsum dolor dawdwa dwa sit amet consectetur adipisicing elit. Necessitatibus quas
-			aliquam maxime Necessitatibus quas aliquam maxime
+            Our team specializes in providing a range of services to cater to your garage door needs. From repairing and installing to maintaining, we have got you covered. Additionally, we are adept at replacing and maintaining torsion springs, which is a frequent issue.
 		</p>
 		<div
 			class="flex h-72 sm:p-0 p-4 col-span-2 sm:col-span-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
@@ -211,9 +217,7 @@
 	<ServicePhoto />
 </section>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
+
 
 <!--  
 
