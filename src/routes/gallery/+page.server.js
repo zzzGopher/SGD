@@ -12,6 +12,8 @@ const client = createClient({
 	accessToken: `${env.CONTENTFUL}`
 });
 
+//Todo delete this todo
+
 export async function load() {
 	return {
 		doorPics: await client.getAssets({
