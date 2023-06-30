@@ -1,66 +1,62 @@
 <script lang="ts">
 	import { quintInOut } from 'svelte/easing';
 	import { fade, slide } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	import { groupImagesIntoSixArr, splitStringArr } from '$lib/functions/arraySorters';
 
-	export let myImages;
+	export let myImages = [];
 
 
 	$: images = myImages;
 
-	// console.log(myImages);
+	let emptyArr: any[] = [[]];
 
-	let testArr:any[] = [];
+	let buildingArr = splitStringArr(emptyArr, myImages);
 
-	const makeImagesArr = (arr:string[]) => {
-		let limit = 0;
+	let finalImageArr =  groupImagesIntoSixArr(buildingArr);
 
-		for (let start = 0; start < arr.length; start++) {
-			if (start < arr.length) {
-				testArr[limit] = arr[start]
+	let selected = 'one';
 
-				if (start === 6) {
-					limit++;
-				}
-			}
+  let firstImages = finalImageArr[0];
 
+	function slideToNextImages(e,arr:string[]):string[]{
 
+		e.preventDefault();
+		let id = e.currentTarget.id;
+		switch (id){
+			case "0": selected = "one"
+				break;
+			case "1": selected = "two"
+				break;
+			case "2": selected = "three"
+				break;
+			default: selected = "one";
 		}
-
-	};
- async function turtle(){
-	 const response = await fetch('./api/contentful-api',{
-		 method:'POST',
-		 body: JSON.stringify({ ff:'this',triangle:45 }),
-		 headers: {
-			 'content-type':'application/json'
-		 }
-	 }).then((res) => res.json());
-
-	 console.log(response);
+		if(finalImageArr[id] !== arr){
+				firstImages = arr[id]
+				return arr;
+			}
+		return arr
  }
 
- onMount(()=>
- turtle()
- );
-
-
-
-	makeImagesArr(myImages);
-
-	console.log(testArr);
-
-	//TODO add a way to load more images and optimize all web image sizes.
+	//TODO optimize all web image sizes to pass lighthouse score.
 
 
 </script>
 
 <div
-	class="hidden min-w-full m-auto large-slider-container w-full justify-center md:flex gap-2 p-2"
+	class="hidden min-w-full m-auto large-slider-container w-full justify-center relative md:flex gap-2 p-2"
 >
-	{#await images}
+	<div class='flex w-full -bottom-14 p-4 justify-center absolute'>
+		<ul class='flex text-white font-medium gap-8'>
+			<button class:selected={selected === "one"} id={0}  on:click={(e)=>slideToNextImages(e,finalImageArr)} class='hover:text-primary transition-all ease-in-out underline'><li>1</li></button>
+			<button class:selected={selected === "two"} id={1} on:click={(e)=>slideToNextImages(e,finalImageArr)} class='hover:text-primary transition-all ease-in-out underline'><li>2</li></button>
+			<button class:selected={selected === "three"} id={2} on:click={(e)=>slideToNextImages(e,finalImageArr)} class='hover:text-primary transition-all ease-in-out underline'><li>3</li></button>
+		</ul>
+	</div>
+	{#await firstImages}
 		<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
 	{:then Images}
+
 		{#each Images as pic, i (pic)}
 			{#if i === 0}
 				<div class="large-slider-image-container">
@@ -77,11 +73,15 @@
 					<img
 						draggable="false"
 						in:slide={{ duration: 1500, easing: quintInOut, axis: 'x' }}
-						on:mousedown={() => {
-							return (Images = [...Images.splice(i), ...Images]);
+						on:click={() => {
+
+							let cloneArr = Images.slice(0);
+
+							Images = [...cloneArr.splice(i),...cloneArr];
+
 						}}
 						src={pic}
-						alt=""
+						alt="carousel of images"
 						class="large-slider-image2 object-cover w-40 min-h-[600px] max-h-[600px]
 					hover:bg-accent transition-all duration-300 ease-in-out cursor-pointer"
 					/>
@@ -94,5 +94,8 @@
 <style>
 	.large-slider-image2:hover {
 		scale: 0.9;
+	}
+	.selected{
+			@apply text-primary;
 	}
 </style>

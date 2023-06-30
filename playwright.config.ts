@@ -2,6 +2,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
 	webServer: {
+		reuseExistingServer: true,
 		command: 'npm run dev',
 		url: 'http://localhost:5173'
 	},

@@ -15,7 +15,7 @@ const client = createClient({
 export async function load() {
 	return {
 		doorPics: await client.getAssets({
-			limit: 6
+			limit: 100
 		})
 	};
 }

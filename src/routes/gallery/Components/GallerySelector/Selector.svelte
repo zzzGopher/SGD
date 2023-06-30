@@ -20,6 +20,7 @@
 
 	const selectedDoorType = (e) => {
 		$doorOptions = lower(e.target.firstChild.data);
+		console.log($doorOptions)
 	};
 </script>
 
