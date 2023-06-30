@@ -16,6 +16,7 @@ export async function load() {
 	return {
 		doorPics: await client.getAssets({
 			limit: 100
-		})
+		}),
+		withEntry: await client.getEntry(`${env.CONTENTFUL_ENTRY}`)
 	};
 }
