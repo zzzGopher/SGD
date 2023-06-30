@@ -3,8 +3,9 @@
 /** @type {import('.$/types').PageServerLoad} */
 
 import pkg from 'contentful';
-const { createClient } = pkg;
 import { env } from '$env/dynamic/private';
+
+const { createClient } = pkg;
 
 // fetching from contentful
 const client = createClient({
