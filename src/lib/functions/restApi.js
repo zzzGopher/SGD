@@ -1,5 +1,6 @@
 // @ts-nocheck
-import { createClient } from 'contentful';
+import pkg from 'contentful';
+const { createClient } = pkg;
 
 // fetching from contentful
 const client = createClient({
