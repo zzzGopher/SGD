@@ -1,20 +1,14 @@
 // @ts-nocheck
-
-/** @type {import('.$/types').PageServerLoad} */
-
-import pkg from 'contentful';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+import * as contentful from 'contentful';
 import { env } from '$env/dynamic/private';
 
-const { createClient } = pkg;
-
 // fetching from contentful
-const client = createClient({
+const client = contentful.createClient({
 	space: `${env.CONTENTFULSPACE}`,
 
 	accessToken: `${env.CONTENTFUL}`
 });
-
-//Todo delete this todo
 
 export async function load() {
 	return {
