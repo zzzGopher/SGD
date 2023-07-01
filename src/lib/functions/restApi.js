@@ -1,8 +1,13 @@
 // @ts-nocheck
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 import * as contentful from 'contentful';
+import pkg from 'contentful';
+const { createClient } = pkg;
+
+const createClientFunc =
+	process.env.NODE_ENV === 'development' ? contentful.createClient : createClient;
 // fetching from contentful
-const client = contentful.createClient({
+const client = createClientFunc({
 	space: 'ou5y66xxxy0c',
 
 	// TODO Delete after server component is working
@@ -16,11 +21,11 @@ const apiResults = async () =>
 		.then((data) => data)
 		.catch((err) => console.log(err));
 
-const data = await apiResults();
+const data = (async () => await apiResults())();
 
 // awaiting results
 
-const res = await data.fields;
+const res = (async () => await data.fields)();
 
 // destructuring the door Images
 const { popularDoors } = res;
