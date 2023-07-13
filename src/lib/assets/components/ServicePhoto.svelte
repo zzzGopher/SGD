@@ -10,7 +10,7 @@
 			<ServiceSvg />
 			<img
 				class="h-full lg:w-full inline-block house-image-main rounded-tl-3xl"
-				src="/main-house-photo.jpg"
+				src="/main-house-photo.webp"
 				alt=""
 			/>
 		</div>
