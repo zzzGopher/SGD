@@ -1,17 +1,20 @@
 // @ts-nocheck
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 import * as contentful from 'contentful';
-import { createClient } from 'contentful';
 
-const createClientFunc = contentful;
-// fetching from contentful
-const client = contentful.createClient({
-	space: 'ou5y66xxxy0c',
+// TODO Delete after server component is working
 
-	// TODO Delete after server component is working
+const client = contentful.createClient
+	? contentful.createClient({
+			accessToken: 'EXR0kul91Rp0Og3jADvfEaiLTKkNOpqUemzoubF4YMI',
 
-	accessToken: `EXR0kul91Rp0Og3jADvfEaiLTKkNOpqUemzoubF4YMI`
-});
+			space: 'ou5y66xxxy0c'
+	  })
+	: contentful.default.createClient({
+			accessToken: 'EXR0kul91Rp0Og3jADvfEaiLTKkNOpqUemzoubF4YMI',
+
+			space: 'ou5y66xxxy0c'
+	  });
 
 const apiResults = async () =>
 	await client
