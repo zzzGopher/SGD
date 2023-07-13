@@ -130,6 +130,7 @@
 				{:then Images}
 			{#each Images as door, i (door)}
 				<img
+					loading='lazy'
 					src={door}
 					alt=""
 					class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"

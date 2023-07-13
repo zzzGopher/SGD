@@ -48,7 +48,7 @@
 				> <a href='tel:918-224-2323'>Call For Pricing & Availability</a></button
 			></div>
 		</div>
-		<img class="absolute h-auto bottom-0 -z-10 right-0" src={'rectangleBG.svg'} alt="ff" />
+		<img loading='lazy' class="absolute h-auto bottom-0 -z-10 right-0" src={'rectangleBG.svg'} alt="ff" />
 	</section>
 	<!--Large Screen Section-->
 	<div class="hidden md:wrapper justify-center">
