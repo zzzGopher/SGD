@@ -157,7 +157,7 @@
 			</div>
 			<img
 				class="object-cover rounded-md sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
-				src="neighborhood_door.jpg"
+				src="neighborhood_door.webp"
 				alt=""
 			/>
 		</div>
@@ -182,7 +182,7 @@
 
 			<img
 				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
-				src="door1.jpg"
+				src="door1.webp"
 				alt=""
 			/>
 		</div>
@@ -206,7 +206,7 @@
 			</div>
 			<img
 				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
-				src="local_beach_door.jpg"
+				src="local_beach_door.webp"
 				alt=""
 			/>
 		</div>
