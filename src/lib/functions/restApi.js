@@ -3,7 +3,7 @@
 import * as contentful from 'contentful';
 
 // TODO Delete after server component is working
-//Delete this also.
+//Delete this also...
 
 const client = contentful.createClient
 	? contentful.createClient({
