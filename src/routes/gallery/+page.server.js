@@ -3,7 +3,7 @@
 /* eslint-disable import/namespace */
 import * as contentful from 'contentful';
 
-import { CONTENTFUL, CONTENTFULSPACE, CONTENTFUL_ENTRY } from '$env/static/private';
+import { CONTENTFUL, CONTENTFULSPACE, CONTENTFUL_ENTRY } from '$env/dynamic/private';
 
 const client = contentful.createClient
 	? contentful.createClient({
