@@ -17,7 +17,7 @@
 	console.log(data);
 
 	const { items } = data.doorPics;
-	$: images =  items.map((d) => d.fields.file?.url);
+	$: images =  items.map((d) => `${d.fields.file?.url}?fm=avif`);
 
 
 

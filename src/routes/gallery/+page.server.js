@@ -8,12 +8,10 @@ import { CONTENTFUL, CONTENTFULSPACE, CONTENTFUL_ENTRY } from '$env/static/priva
 const client = contentful.createClient
 	? contentful.createClient({
 			accessToken: `${CONTENTFUL}`,
-
 			space: `${CONTENTFULSPACE}`
 	  })
 	: contentful.default.createClient({
 			accessToken: `${CONTENTFUL}`,
-
 			space: `${CONTENTFULSPACE}`
 	  });
 
