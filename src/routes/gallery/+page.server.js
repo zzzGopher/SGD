@@ -3,18 +3,18 @@
 /* eslint-disable import/namespace */
 import * as contentful from 'contentful';
 
-import { env } from '$env/dynamic/private';
+import { CONTENTFUL, CONTENTFULSPACE, CONTENTFUL_ENTRY } from '$env/static/private';
 
 const client = contentful.createClient
 	? contentful.createClient({
-			accessToken: `${env.CONTENTFUL}`,
+			accessToken: `${CONTENTFUL}`,
 
-			space: `${env.CONTENTFULSPACE}`
+			space: `${CONTENTFULSPACE}`
 	  })
 	: contentful.default.createClient({
-			accessToken: `${env.CONTENTFUL}`,
+			accessToken: `${CONTENTFUL}`,
 
-			space: `${env.CONTENTFULSPACE}`
+			space: `${CONTENTFULSPACE}`
 	  });
 
 // fetching from contentful
@@ -24,6 +24,6 @@ export async function load() {
 		doorPics: await client.getAssets({
 			limit: 100
 		}),
-		withEntry: await client.getEntry(`${env.CONTENTFUL_ENTRY}`)
+		withEntry: await client.getEntry(`${CONTENTFUL_ENTRY}`)
 	};
 }
