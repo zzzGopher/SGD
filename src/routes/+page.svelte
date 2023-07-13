@@ -157,7 +157,7 @@
 			</div>
 			<img
 				class="object-cover rounded-md sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
-				src="neighborhood_door.webp"
+				src="neighborhood_door(1).webp"
 				alt=""
 			/>
 		</div>
