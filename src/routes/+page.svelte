@@ -157,7 +157,7 @@
 			</div>
 			<img
 				class="object-cover rounded-md sm:col-start-2 sm:row-start-1 justify-self-end sm:min-h-[400px] w-full h-full sm:h-picW sm:w-picW"
-				src="neighborhood_door(1).webp"
+				src="front-page-image3.webp"
 				alt=""
 			/>
 		</div>
@@ -182,7 +182,7 @@
 
 			<img
 				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
-				src="door1.webp"
+				src="front-page-image2.webp"
 				alt=""
 			/>
 		</div>
@@ -206,7 +206,7 @@
 			</div>
 			<img
 				class="w-full h-full relative rounded-md picCenter sm:col-start-1 sm:row-start-1 sm:w-picW sm:object-bottom sm:h-3/4 object-cover"
-				src="local_beach_door.webp"
+				src="front-page-image1.webp"
 				alt=""
 			/>
 		</div>
@@ -219,17 +219,7 @@
 
 
 
-<!--  
 
-	LARGE SCREEN SECTION!
-
-  -->
-
-<!--  
-
-	END OF LARGE SCREEN SECTION!
-
-  -->
 <style>
 	.picCenter {
 		object-position: 0 70%;
