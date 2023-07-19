@@ -23,7 +23,7 @@ module.exports = {
 			colors: {
 				primary: '#00A9FF',
 				secondary: '#3C4856',
-				accent: '#9FACBD',
+				accent: '#c8ced9',
 				footer_color: '#EEF5FD'
 			},
 			width: {

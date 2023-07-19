@@ -3,12 +3,12 @@
 	import { fade } from 'svelte/transition';
 	import { quintInOut } from 'svelte/easing';
 	import { active } from './MenuActiveStore';
-	import { doorOptions } from '../../../../Stores/ImageStore';
+	import { doorOptions,images } from '../../../../Stores/ImageStore';
 
 	function Toggle(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
 		$active = !$active;
-		console.log(active);
+		console.log($active);
 	}
 
 	function lower(target) {
@@ -22,6 +22,7 @@
 		$doorOptions = lower(e.target.firstChild.data);
 		console.log($doorOptions)
 	};
+
 </script>
 
 <div class="selector-container w-full">

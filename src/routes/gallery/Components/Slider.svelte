@@ -3,15 +3,6 @@
 	import RightArrowIcon from './RightArrowIcon.svelte';
 	import type { svg_size } from './svg_size';
 
-
-	let Images = [
-		{ id: 0, pic: 'door1.jpg' },
-		{ id: 1, pic: 'local_beach_door.jpg' },
-		{ id: 2, pic: 'neighborhood_door.jpg' },
-		{ id: 3, pic: 'small-house.jpg' },
-		{ id: 4, pic: 'house_image.jpg' }
-	];
-
 	export let myImages;
 
 	let initialPos = 0,
@@ -34,8 +25,6 @@
 				e.preventDefault();
 				e.stopPropagation();
 			};
-
-			let elem = e.target.style;
 
 			picWidth = e.target.getBoundingClientRect().width;
 			grab = !grab;
@@ -121,32 +110,31 @@
 
 <!-- markup (zero or more items) goes here -->
 
-<div class="flex md:hidden  items-center relative justify-center w-full">
+<div class="flex md:hidden items-center relative justify-center w-full">
 	<LeftArrowIcon on:click={() => handleButtons('left')} size={svg} color={'#ffff'} />
 	<ul class="slider-container" class:grabbing class:grab on:drag={stopWeird}>
 		<li class="slide rounded-xl">
 			{#await myImages}
 				<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
-				{:then Images}
-			{#each Images as door, i (door)}
-				<img
-					loading='lazy'
-					src={door}
-					alt=""
-					class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
-					bind:this={slideArr[i]}
-					id={door.id}
-					on:mousemove={moving}
-					on:mouseup={concluded}
-					on:mousedown={(e) => initialized(e, i)()}
-				/>
-			{/each}
-				{/await}
+			{:then Images}
+				{#each Images as door, i (door)}
+					<img
+						loading="lazy"
+						src={door}
+						alt=""
+						class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
+						bind:this={slideArr[i]}
+						id={door.id}
+						on:mousemove={moving}
+						on:mouseup={concluded}
+						on:mousedown={(e) => initialized(e, i)()}
+					/>
+				{/each}
+			{/await}
 		</li>
 	</ul>
 	<RightArrowIcon on:click={() => handleButtons('right')} size={svg} color={'#ffff'} />
 </div>
-
 
 <!-- </ul> -->
 <style>

@@ -1,6 +1,14 @@
 <script lang="ts">
-	import {doorColors} from '$lib/functions/restApi';
+	import { doorColors } from '../../../../Stores/ImageStore';
 
+	let dcArr = [];
+	let i = 0;
+	for(let dc in $doorColors){
+		dcArr[i] = dc;
+		i++;
+	}
+
+	console.log(dcArr);
 
 </script>
 
@@ -16,7 +24,7 @@
 		</h4>
 	</div>
 	<div class="color-box flex flex-row w-auto gap-2 h-full items-center">
-		{#await doorColors}
+		{#await dcArr}
 			<p class="text-white">loading...</p>
 		{:then Door}
 			{#each Door as DC}

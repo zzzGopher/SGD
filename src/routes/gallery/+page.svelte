@@ -6,6 +6,7 @@
 	import LargeSlider from './Components/LargeSlider/LargeSlider.svelte';
 	import Selector from './Components/GallerySelector/Selector.svelte';
 	import { active } from './Components/GallerySelector/MenuActiveStore';
+	import { alterable, doorOptions, images, doorColors } from '../../Stores/ImageStore';
 
 	function CloseMenu(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
@@ -16,13 +17,15 @@
 
 	console.log(data);
 
+	$doorColors = data.all.fields.colors;
+
+	$: $alterable = data[$doorOptions].fields[$doorOptions];
+
+	console.log($alterable);
+
 	const { items } = data.doorPics;
-	$: images =  items.map((d) => `${d.fields.file?.url}`);
 
-
-
-
-
+	$: $images = items.map((d) => `${d.fields.file?.url}`);
 </script>
 
 <svelte:head>
@@ -32,28 +35,33 @@
 	/>
 </svelte:head>
 
-<html lang='en' id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
+<html lang="en" id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
 	<section class="md:hidden m-auto min-h-min sm:min-h-screen max-w-7xl py-8 wrapper">
 		<div class=" flex gap-8 p-4 flex-col items-start justify-center w-full py-8">
 			<GalleryHeader />
 			<Selector />
-			<Slider myImages={images}/>
+			<Slider bind:myImages={$images} />
 			<DoorTypes />
 
-			<div class='flex w-full items-center justify-start gap-2'>
+			<div class="flex w-full items-center justify-start gap-2">
+				<PhoneIcon height={20} width={20} />
 
-			<PhoneIcon height={20} width={20} />
-
-			<button class="text-accent text-Cxs font-semibold"
-				> <a href='tel:918-224-2323'>Call For Pricing & Availability</a></button
-			></div>
+				<button class="text-accent text-Cxs font-semibold">
+					<a href="tel:918-224-2323">Call For Pricing & Availability</a></button
+				>
+			</div>
 		</div>
-		<img loading='lazy' class="absolute h-auto bottom-0 -z-10 right-0" src={'rectangleBG.svg'} alt="ff" />
+		<img
+			loading="lazy"
+			class="absolute h-auto bottom-0 -z-10 right-0"
+			src={'rectangleBG.svg'}
+			alt="ff"
+		/>
 	</section>
 	<!--Large Screen Section-->
 	<div class="hidden md:wrapper justify-center">
 		<section class="hidden w-full md:grid grid-flow-row mt-32">
-			<LargeSlider myImages={images}/>
+			<LargeSlider bind:myImages={$images} />
 
 			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 min-w-full">
 				<div class="flex w-auto flex-col gap-2 items-start">
