@@ -6,7 +6,7 @@
 	import LargeSlider from './Components/LargeSlider/LargeSlider.svelte';
 	import Selector from './Components/GallerySelector/Selector.svelte';
 	import { active } from './Components/GallerySelector/MenuActiveStore';
-	import { alterable, doorOptions, images, doorColors } from '../../Stores/ImageStore';
+	import { doorColors } from '../../Stores/ImageStore';
 
 	function CloseMenu(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
@@ -15,17 +15,13 @@
 
 	export let data;
 
-	console.log(data);
-
 	$doorColors = data.all.fields.colors;
-
-	$: $alterable = data[$doorOptions].fields[$doorOptions];
-
-	console.log($alterable);
-
-	const { items } = data.doorPics;
-
-	$: $images = items.map((d) => `${d.fields.file?.url}`);
+	//
+	// $: $alterable = data[$doorOptions].fields[$doorOptions];
+	//
+	// const { items } = data.doorPics;
+	//
+	// $: $images = $alterable.map((d) => `${d.fields.file?.url}`);
 </script>
 
 <svelte:head>
@@ -40,7 +36,7 @@
 		<div class=" flex gap-8 p-4 flex-col items-start justify-center w-full py-8">
 			<GalleryHeader />
 			<Selector />
-			<Slider bind:myImages={$images} />
+			<Slider {data} />
 			<DoorTypes />
 
 			<div class="flex w-full items-center justify-start gap-2">
@@ -61,7 +57,7 @@
 	<!--Large Screen Section-->
 	<div class="hidden md:wrapper justify-center">
 		<section class="hidden w-full md:grid grid-flow-row mt-32">
-			<LargeSlider bind:myImages={$images} />
+			<LargeSlider {data} />
 
 			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 min-w-full">
 				<div class="flex w-auto flex-col gap-2 items-start">

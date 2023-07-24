@@ -2,20 +2,27 @@
 	import { quintInOut } from 'svelte/easing';
 	import { fade, slide } from 'svelte/transition';
 	import { groupImagesIntoSixArr, splitStringArr } from '$lib/functions/arraySorters';
+	import { doorOptions, images, alterable } from '../../../../Stores/ImageStore';
 
-	export let myImages = [];
+	export let data;
 
-	$: images = myImages;
+
+
+	$: $alterable = data[$doorOptions].fields[$doorOptions];
+
+	$: $images = $alterable.map((img)=>img.fields.file?.url);
 
 	let emptyArr: any[] = [[]];
 
-	let buildingArr = splitStringArr(emptyArr, myImages);
 
-	let finalImageArr = groupImagesIntoSixArr(buildingArr);
+
+	$: buildingArr = splitStringArr(emptyArr, $images);
+
+	$: finalImageArr = groupImagesIntoSixArr(buildingArr);
 
 	let selected = 'one';
 
-	let firstImages = finalImageArr[0];
+	$: firstImages = finalImageArr[0];
 
 	function slideToNextImages(e, arr: string[]): string[] {
 		e.preventDefault();
@@ -42,10 +49,10 @@
 
 	//TODO optimize all web image sizes to pass lighthouse score. and fix layout shift.
 </script>
-
 <div
 	class="hidden min-w-full m-auto large-slider-container w-full justify-center relative md:flex gap-2 p-2"
 >
+	{#if $images.length > 6}
 	<div class="flex w-full -bottom-14 p-4 justify-center absolute">
 		<div class="flex text-white font-medium gap-8">
 			<button
@@ -67,7 +74,7 @@
 				class="hover:text-primary transition-all ease-in-out underline">3</button
 			>
 		</div>
-	</div>
+	</div>{/if}
 	{#await firstImages}
 		<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
 	{:then Images}
@@ -86,7 +93,6 @@
 			{:else}
 				<div class="large-slider-image-container">
 					<img
-						loading="lazy"
 						draggable="false"
 						in:slide={{ duration: 1500, easing: quintInOut, axis: 'x' }}
 						on:click={() => {

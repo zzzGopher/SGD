@@ -8,8 +8,6 @@
 		i++;
 	}
 
-	console.log(dcArr);
-
 </script>
 
 <div class="door-types-container justify-between gap-4 flex flex-row w-full md:w-auto md:gap-20">

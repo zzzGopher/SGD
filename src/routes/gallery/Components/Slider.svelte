@@ -2,19 +2,27 @@
 	import LeftArrowIcon from './LeftArrowIcon.svelte';
 	import RightArrowIcon from './RightArrowIcon.svelte';
 	import type { svg_size } from './svg_size';
+	import { alterable, doorOptions, images, currentIndex } from '../../../Stores/ImageStore';
 
-	export let myImages;
+	export let data;
+
+	console.log(data);
+
+	$: $alterable = data[$doorOptions].fields[$doorOptions];
+
+	$: $images = $alterable.map((img) => img.fields.file?.url);
+
+	$: console.log($images);
 
 	let initialPos = 0,
 		prevTranslate = 0,
 		currentTranslate = 0,
 		isMoving = false,
 		animationID: number,
-		slideArr: any[] = [],
 		grab = true,
 		grabbing = false,
-		currentIndex = 0,
-		picWidth = 0;
+		picWidth = 0,
+		currentElement;
 
 	const stopWeird = (e: any) => e.preventDefault();
 
@@ -55,9 +63,9 @@
 
 		const movedBy: number = currentTranslate - prevTranslate;
 
-		if (movedBy < -100 && currentIndex < slideArr.length - 1) currentIndex += 1;
+		if (movedBy < -100 && $currentIndex < $images.length - 1) $currentIndex += 1;
 
-		if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
+		if (movedBy > 100 && $currentIndex > 0) $currentIndex -= 1;
 
 		setPositionByIndex();
 	};
@@ -77,13 +85,15 @@
 	}
 
 	function setPositionByIndex() {
-		currentTranslate = currentIndex * -picWidth;
+		currentTranslate = $currentIndex * -picWidth;
 		prevTranslate = currentTranslate;
 		setSliderPos();
 	}
 
 	const setSliderPos = () => {
-		slideArr.forEach((sl) => (sl.style.transform = `translateX(${currentTranslate}px`));
+		$images.forEach((sl) => {
+			sl.style.transform = `translateX(${currentTranslate}px)`;
+		});
 	};
 
 	const svg: svg_size = {
@@ -92,19 +102,21 @@
 	};
 
 	const handleButtons = (direction: any) => {
-		const currentElement = slideArr[currentIndex];
+		currentElement = $images[$currentIndex];
 		const slideWidth = currentElement.getBoundingClientRect().width;
-		let newTranslate = currentIndex * -slideWidth;
+		let newTranslate = $currentIndex * -slideWidth;
 		prevTranslate = newTranslate;
-		const numSlides = slideArr.length;
+		const numSlides = $images.length;
 
-		if (direction === 'left' && currentIndex > 0) {
-			currentIndex--;
-		} else if (direction === 'right' && currentIndex < numSlides - 1) {
-			currentIndex++;
+		if (direction === 'left' && $currentIndex > 0) {
+			$currentIndex--;
+		} else if (direction === 'right' && $currentIndex < numSlides - 1) {
+			$currentIndex++;
 		}
 
-		slideArr.forEach((el) => (el.style.transform = `translateX(${currentIndex * -slideWidth}px)`));
+		$images.forEach((el) => {
+			el.style.transform = `translateX(${$currentIndex * -slideWidth}px)`;
+		});
 	};
 </script>
 
@@ -114,21 +126,24 @@
 	<LeftArrowIcon on:click={() => handleButtons('left')} size={svg} color={'#ffff'} />
 	<ul class="slider-container" class:grabbing class:grab on:drag={stopWeird}>
 		<li class="slide rounded-xl">
-			{#await myImages}
-				<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
+			{#await $images}
+				<p class="min-h-[600px] w-full text-4xl text-white flex justify-center items-center">
+					loading...
+				</p>
 			{:then Images}
 				{#each Images as door, i (door)}
-					<img
-						loading="lazy"
-						src={door}
-						alt=""
-						class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
-						bind:this={slideArr[i]}
-						id={door.id}
-						on:mousemove={moving}
-						on:mouseup={concluded}
-						on:mousedown={(e) => initialized(e, i)()}
-					/>
+					{#key door}
+						<img
+							src={door}
+							alt=""
+							class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
+							bind:this={door}
+							id={0}
+							on:mousemove={moving}
+							on:mouseup={concluded}
+							on:mousedown={(e) => initialized(e, i)()}
+						/>
+					{/key}
 				{/each}
 			{/await}
 		</li>

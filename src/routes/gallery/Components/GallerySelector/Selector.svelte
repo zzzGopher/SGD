@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { quintInOut } from 'svelte/easing';
 	import { active } from './MenuActiveStore';
-	import { doorOptions,images } from '../../../../Stores/ImageStore';
+	import { doorOptions, currentIndex } from '../../../../Stores/ImageStore';
 
 	function Toggle(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
@@ -18,11 +18,11 @@
 			.toLowerCase();
 	}
 
-	const selectedDoorType = (e) => {
+	$: selectedDoorType = (e) => {
+		$currentIndex = 0;
 		$doorOptions = lower(e.target.firstChild.data);
-		console.log($doorOptions)
+		console.log($doorOptions);
 	};
-
 </script>
 
 <div class="selector-container w-full">

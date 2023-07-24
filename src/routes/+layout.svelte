@@ -20,11 +20,6 @@
 		{ name: 'Contact', href: '/contact' }
 	];
 
-	//TODO There is a log here for the api because the layout renders on each page
-
-
-
-	// console.log(import.meta.env.CONTENTFUL);
 
 
 </script>

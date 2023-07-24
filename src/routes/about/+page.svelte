@@ -2,7 +2,6 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 
-	//TODO use svelte:window to detect and change image sizes before render
 
 	let reactive_img = {
 		img1: '/house_image_mobile.webp',
