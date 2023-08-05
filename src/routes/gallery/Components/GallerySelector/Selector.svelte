@@ -30,10 +30,10 @@
 		on:click={selectedDoorType}
 		class="hidden list-container h-auto pt-4 md:flex justify-start gap-2 text-center items-center whitespace-nowrap"
 	>
-		<li class="list-items">Popular</li>
 		<li class="list-items">All</li>
-		<li class="list-items">Decorative</li>
+		<li class="list-items">Steel on Steel</li>
 		<li class="list-items">Residential</li>
+		<li class="list-items">Decorative</li>
 	</ul>
 </div>
 
@@ -53,7 +53,7 @@
 			transition:fade={{ duration: 500, easing: quintInOut }}
 			class="dropdown-list-container flex-col hidden w-52 h-40 rounded-xl bg-white text-center mt-60 absolute z-10 items-center justify-center shadow-xl"
 		>
-			<li class="dropdown-list-items rounded-t-xl"><span>Popular</span></li>
+			<li class="dropdown-list-items rounded-t-xl"><span>All</span></li>
 			<li class="dropdown-list-items"><span>Steel on steel</span></li>
 			<li class="dropdown-list-items"><span>Residential</span></li>
 			<li class="dropdown-list-items rounded-b-xl"><span>Decorative</span></li>
@@ -68,7 +68,7 @@
 		@apply bg-opacity-40;
 	}
 	.list-items {
-		@apply bg-accent w-28 p-2 rounded-md shadow-sm shadow-black;
+		@apply bg-accent w-32 p-2 rounded-md shadow-sm shadow-black;
 	}
 	.list-items:hover {
 		@apply bg-opacity-40 cursor-pointer transition-all ease-in-out;

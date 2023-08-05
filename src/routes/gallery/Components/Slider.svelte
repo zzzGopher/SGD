@@ -6,7 +6,7 @@
 
 	export let data;
 
-	console.log(data);
+	console.log(!data);
 
 	$: $alterable = data[$doorOptions].fields[$doorOptions];
 
@@ -26,7 +26,7 @@
 
 	const stopWeird = (e: any) => e.preventDefault();
 
-	const initialized = (e: any, i: any) => {
+	const initialized = (e: any) => {
 		return () => {
 			e.preventDefault();
 			window.oncontextmenu = (e: any) => {
@@ -132,7 +132,7 @@
 				</p>
 			{:then Images}
 				{#each Images as door, i (door)}
-					{#key door}
+					{#key Images}
 						<img
 							src={door}
 							alt=""

@@ -3,7 +3,14 @@
 /* eslint-disable import/namespace */
 import * as contentful from 'contentful';
 
-import { CONTENTFUL, CONTENTFULSPACE, ALL_ENTRY, DECORATIVE_ENTRY } from '$env/static/private';
+import {
+	CONTENTFUL,
+	CONTENTFULSPACE,
+	ALL_ENTRY,
+	DECORATIVE_ENTRY,
+	RESIDENTIAL_ENTRY,
+	STEEL_ENTRY
+} from '$env/static/private';
 
 const client = contentful.createClient
 	? contentful.createClient({
@@ -23,6 +30,8 @@ export async function load() {
 			limit: 100
 		}),
 		all: await client.getEntry(ALL_ENTRY),
-		decorative: await client.getEntry(DECORATIVE_ENTRY)
+		decorative: await client.getEntry(DECORATIVE_ENTRY),
+		steelonsteel: await client.getEntry(STEEL_ENTRY),
+		residential: await client.getEntry(RESIDENTIAL_ENTRY)
 	};
 }
