@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '../../../lib/assets/components/Primary_button.svelte';
+	import Button from '$lib/components/Primary_button.svelte';
 </script>
 
 <form action="submit">

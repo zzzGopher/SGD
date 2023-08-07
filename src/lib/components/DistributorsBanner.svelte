@@ -11,10 +11,10 @@
 	>
 		<a href="https://doorlinkmfg.com/">Door Link</a>
 		<a href="https://www.chiohd.com/">C.H.I Doors</a>
-		<a class="w-16 sm:w-28" href="/"
+		<a class="w-16 sm:w-28" href="/static"
 			><img src="garaga_finalp.svg" alt="Link to garaga doors home page" /></a
 		>
-		<a href="/">Mid America</a>
+		<a href="/static">Mid America</a>
 		<div
 			class="background-banner invisible md:visible absolute h-24 -z-10 bg-primary text-primary w-screen"
 		/>

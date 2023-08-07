@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ServiceSvg from './ServiceSvg.svelte';
+	import ServiceSvg from '../assets/ServiceSvg.svelte';
 </script>
 
 <div

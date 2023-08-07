@@ -4,13 +4,13 @@
 	import type { svg_size } from './svg_size';
 	import { alterable, doorOptions, images, currentIndex } from '../../../Stores/ImageStore';
 
-	export let data;
+	export let data: any;
 
-	console.log(!data);
+	console.log(data);
 
 	$: $alterable = data[$doorOptions].fields[$doorOptions];
 
-	$: $images = $alterable.map((img) => img.fields.file?.url);
+	$: $images = $alterable.map((img: any) => img.fields.file?.url);
 
 	$: console.log($images);
 
@@ -91,7 +91,7 @@
 	}
 
 	const setSliderPos = () => {
-		$images.forEach((sl) => {
+		$images.forEach((sl: any) => {
 			sl.style.transform = `translateX(${currentTranslate}px)`;
 		});
 	};
@@ -114,7 +114,7 @@
 			$currentIndex++;
 		}
 
-		$images.forEach((el) => {
+		$images.forEach((el: any) => {
 			el.style.transform = `translateX(${$currentIndex * -slideWidth}px)`;
 		});
 	};
@@ -138,10 +138,9 @@
 							alt=""
 							class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
 							bind:this={door}
-							id={0}
 							on:mousemove={moving}
 							on:mouseup={concluded}
-							on:mousedown={(e) => initialized(e, i)()}
+							on:mousedown={(e) => initialized(e)()}
 						/>
 					{/key}
 				{/each}

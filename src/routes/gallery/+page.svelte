@@ -16,12 +16,6 @@
 	export let data;
 
 	$doorColors = data.all.fields.colors;
-	//
-	// $: $alterable = data[$doorOptions].fields[$doorOptions];
-	//
-	// const { items } = data.doorPics;
-	//
-	// $: $images = $alterable.map((d) => `${d.fields.file?.url}`);
 </script>
 
 <svelte:head>

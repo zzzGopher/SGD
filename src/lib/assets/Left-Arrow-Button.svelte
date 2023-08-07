@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { svg_size } from '../../../routes/gallery/Components/svg_size';
+	import type { svg_size } from '../../routes/gallery/Components/svg_size';
 	export let size: svg_size;
 	export let color: string = '#000000';
 </script>

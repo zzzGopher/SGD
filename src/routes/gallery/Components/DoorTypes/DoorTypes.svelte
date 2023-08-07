@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { doorColors } from '../../../../Stores/ImageStore';
 
-	let dcArr = [];
+	let doorColorArr: string[] = [];
 	let i = 0;
 	for (let dc in $doorColors) {
-		dcArr[i] = dc;
+		doorColorArr[i] = dc;
 		i++;
 	}
 </script>
@@ -21,7 +21,7 @@
 		</span>
 	</h2>
 	<div class="color-box flex flex-row w-auto gap-2 h-full items-center">
-		{#await dcArr}
+		{#await doorColorArr}
 			<p class="text-white">loading...</p>
 		{:then Door}
 			{#each Door as DC}
@@ -32,15 +32,6 @@
 </div>
 
 <style>
-	/* .color-box span::after {
-		content: '___';
-		width: 60px;
-		height: 60px;
-		background-color: red;
-		border-radius: 50px;
-		color: transparent;
-		z-index: 20;
-	} */
 	.available {
 		letter-spacing: 0.15em;
 	}

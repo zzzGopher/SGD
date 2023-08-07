@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { onMount } from 'svelte';
 
 	let reactive_img = {
@@ -7,7 +7,7 @@
 		img3: '/white_Image_mobile.webp'
 	};
 
-	let innerWidth;
+	let innerWidth: number;
 
 	onMount(() => {
 		if (innerWidth > 476) {
@@ -15,7 +15,6 @@
 			reactive_img.img2 = '/house_image2.webp';
 			reactive_img.img3 = '/white_Image.webp';
 		}
-		console.log(innerWidth);
 	});
 </script>
 

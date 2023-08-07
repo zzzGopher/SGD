@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
-	import Distributor from '../lib/assets/components/DistributorsBanner.svelte';
-	import Testimonials from '../lib/assets/components/Testimonials.svelte';
-	import Button from '../lib/assets/components/Primary_button.svelte';
-	import Anchor from '../lib/assets/components/Anchor.svelte';
-	import FreeToQuote from '$lib/assets/components/FreeToQuote.svelte';
-	import ServicePhoto from '$lib/assets/components/ServicePhoto.svelte';
+	import Distributor from '$lib/components/DistributorsBanner.svelte';
+	import Testimonials from '$lib/components/Testimonials.svelte';
+	import Button from '$lib/components/Primary_button.svelte';
+	import Anchor from '$lib/components/Anchor.svelte';
+	import FreeToQuote from '$lib/components/FreeToQuote.svelte';
+	import ServicePhoto from '$lib/components/ServicePhoto.svelte';
 
 	const REVIEW_NUMBER = 0;
 	let el: any;

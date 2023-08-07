@@ -1,7 +1,9 @@
 <script lang="ts">
 	import './app.css';
 	import Icon from '@iconify/svelte';
-	import { fly } from 'svelte/transition';
+	import Footer from '$lib/components/Footer.svelte';
+	import MobileNav from '$lib/components/MobileNav.svelte';
+	import type { indexReference } from '$lib/types/indexReference.js';
 
 	let hider = false;
 	//toggles the nav bar.
@@ -10,7 +12,7 @@
 		hider = !hider;
 	}
 
-	let indexRefs = [
+	export const indexRefs: indexReference = [
 		{ name: 'Home', href: '/' },
 		{ name: 'About', href: '/about' },
 		{ name: 'Gallery', href: '/gallery' },
@@ -20,32 +22,12 @@
 
 <nav style:visibility="visible">
 	<div class="m-auto max-w-7xl px-8">
-		<!-- Slider
-		
-		-->
-		{#if hider}
-			<div
-				transition:fly={{ x: 500, duration: 1000 }}
-				class="nav_slide fixed flex flex-col items-center py-40 text-2xl justify-around gap-40 z-20 transition-all bg-primary h-screen right-0 w-1/2"
-			>
-				{#each indexRefs as index, i}
-					<a
-						class="font-black text-white"
-						transition:fly={{ x: 500, duration: i * 800 }}
-						href={index.href}>{index.name}</a
-					>
-				{/each}
-			</div>{/if}
+		<MobileNav {hider} {indexRefs} />
 
-		<!-- Slider End
-		
-		-->
 		<nav class="m-auto pt-8" aria-label="Site Navigation">
 			<div
 				class="min-w-full sm:justify-between flex h-20 justify-start sm:gap-0 gap-4 items-center pb-4"
 			>
-				<!--  Icon  -->
-
 				<button on:click={navDisplay} class="w-10 h-auto sm:hidden self-start text-primary">
 					<div class=" relative mt-1.5 z-10 self-start">
 						<Icon class="" height={28} icon="ci:hamburger" />
@@ -69,44 +51,13 @@
 					{/each}
 				</ul>
 			</div>
-
-			<!--  
-
-End Icon
--->
-
-			<!-- Border SVG-->
-
-			<!-- Border SVG End-->
 		</nav>
 	</div>
 </nav>
 
 <slot />
 
-<!--Footer-->
-<div class="flex h-24 flex-col gap-2 py-8 bg-footer_color justify-center items-center">
-	<a href="/" class="hover:text-black text-gray-500">
-		<Icon color="black" icon="akar-icons:facebook-fill" width={28} />
-	</a>
-
-	<div class="flex w-full flex-row items-center justify-around">
-		<a href="/" class="text-black hover_footer text-xs sm:text-lg">Facebook</a>
-
-		<a class="sm:text-2xl text-black hover:text-black" href="/">Developed by &#169 Frogip</a>
-
-		<a href="/" class="text-black hover_footer text-xs sm:text-lg">Yelp</a>
-	</div>
-</div>
+<Footer />
 
 <style>
-	.hover_footer:hover {
-		color: black;
-		transform: scale(1.2);
-	}
-	.nav_slide > a:hover {
-		transform: scale(1.3);
-		font-weight: 700;
-		color: black;
-	}
 </style>
