@@ -1,7 +1,5 @@
 <script type="ts">
-	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
-
 
 	let reactive_img = {
 		img1: '/house_image_mobile.webp',
@@ -56,11 +54,11 @@
 	<div class="row_2 realtive">
 		<div class="pic_container relative h-40 w-screen">
 			<img class="h-40 pic_2 mx-auto w-full object-cover" src={reactive_img.img2} alt="" />
-			<h1
+			<h2
 				class=" absolute h-auto text-center md:right-0 left-0 top-14 md:top-10 text-Cxl font-bold text-white z-10 mx-auto px-8"
 			>
 				Our Goals
-			</h1>
+			</h2>
 		</div>
 		<div class="flex h-min py-8 text-Cbase leading-8 max-w-7xl mx-auto px-8">
 			<p class="h-min text-Csm text-white">
@@ -73,11 +71,11 @@
 	<div class="row_2 realtive">
 		<div class="pic_container relative h-40 w-screen">
 			<img class="h-40 mx-auto w-full object-cover" src={reactive_img.img3} alt="" />
-			<h1
+			<h3
 				class="max-w-7xl absolute left-0 right-0 top-14 md:top-10 font-bold text-Cxl z-10 mx-auto px-8"
 			>
 				Years in Business
-			</h1>
+			</h3>
 		</div>
 		<div class="flex h-min py-8 text-Cbase leading-8 max-w-7xl mx-auto px-8">
 			<p class="h-min text-Csm text-white">

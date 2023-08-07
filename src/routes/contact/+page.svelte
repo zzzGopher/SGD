@@ -18,7 +18,7 @@
 			<Form />
 		</div>
 		<div class="information-map-container w-full h-full p-4 py-20 text-center md:text-left">
-			<h1 class="door-info text-C2xl text-white font-custom">Get In Touch</h1>
+			<h2 class="door-info text-C2xl text-white font-custom">Get In Touch</h2>
 			<br />
 			<p class="door-info-paragraph text-accent font-custom text-Cbase font-bold">
 				To get in touch with us, you can either call or email us. We'll promptly provide you with

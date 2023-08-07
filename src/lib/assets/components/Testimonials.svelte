@@ -2,6 +2,7 @@
 	const start = false,
 		second = false,
 		middle = false;
+
 	const testimonials = [
 		{
 			body: 'Damaged my overhead shop door by accidentally backing into it.  Sapulpa Garage Door quickly replaced it.  Friendly service, fair price, and great work. They clean up the area and haul away the debris.  These are the guys to call.',
@@ -51,12 +52,12 @@
 	];
 </script>
 
-<section class="relative">
+<section class="relative" aria-label="reviews">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-xl text-center">
-			<h2 class="font-custom2 text-lg font-semibold leading-8 tracking-tight pb-4 text-primary">
+			<h3 class="font-custom2 text-lg font-semibold leading-8 tracking-tight pb-4 text-primary">
 				Google Reviews
-			</h2>
+			</h3>
 			<p class="font-custom2 mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 				We have worked with thousands of amazing people
 			</p>

@@ -61,7 +61,7 @@
 
 			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 min-w-full">
 				<div class="flex w-auto flex-col gap-2 items-start">
-					<h2 class="text-Cxl text-white">Gallery</h2>
+					<h1 class="text-Cxl text-white">Gallery</h1>
 					<p class="text-accent text-Cbase font-bold">
 						Take a look at our gallery featuring a wide variety of door installations and repairs.
 						Our collection includes residential and carriage doors with various styles to choose

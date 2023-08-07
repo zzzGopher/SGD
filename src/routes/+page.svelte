@@ -29,16 +29,14 @@
 		const newCounter = new (numberCounter as any)(el, 50);
 		newCounter.runCount();
 	});
-
-
-
-
 </script>
 
-
 <svelte:head>
-    <title>Home</title>
-    <meta name="description" content="The Tulsa and Sapulpa Garage Doors company offers garage door installations and spring repairs to various areas in and around Tulsa, Oklahoma, and Sapulpa, Oklahoma. Our services extend to local areas such as Mannford, Mounds, Jenks, Sand Springs, Bixby, Owasso, Beggs, Okmulgee, Broken Arrow, Jennings, and many others."/>
+	<title>Home</title>
+	<meta
+		name="description"
+		content="The Tulsa and Sapulpa Garage Doors company offers garage door installations and spring repairs to various areas in and around Tulsa, Oklahoma, and Sapulpa, Oklahoma. Our services extend to local areas such as Mannford, Mounds, Jenks, Sand Springs, Bixby, Owasso, Beggs, Okmulgee, Broken Arrow, Jennings, and many others."
+	/>
 </svelte:head>
 
 <!--Oklahoma Box-->
@@ -90,11 +88,12 @@
 		>
 			Serving All Of Green Country
 		</h1>
-		<h2
+		<p
 			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 font-bold text-accent max-w-prose sm:px-12"
 		>
-            Rest assured that you will receive fair treatment and get all your questions answered when you request a free estimate from us!
-		</h2>
+			Rest assured that you will receive fair treatment and get all your questions answered when you
+			request a free estimate from us!
+		</p>
 
 		<Button
 			hidden="hidden"
@@ -146,7 +145,9 @@
 		<p
 			class="w-full col-span-2 text-center font-light text-sm sm:hidden sm:text-Csm place-self-center"
 		>
-            Take a look at our gallery featuring a wide variety of door installations and repairs. Our collection includes residential and carriage doors with various styles to choose from. We have popular options for you to explore at your convenience. Thank you for considering us.
+			Take a look at our gallery featuring a wide variety of door installations and repairs. Our
+			collection includes residential and carriage doors with various styles to choose from. We have
+			popular options for you to explore at your convenience. Thank you for considering us.
 		</p>
 
 		<div
@@ -170,7 +171,10 @@
 		<p
 			class="w-full place-self-center text-center col-span-2 sm:hidden font-light text-sm sm:text-Csm"
 		>
-            We are a local, family-owned, and operated garage door company with over 28 years of experience. We offer quality commercial and residential installation and repairs for doors and openers at competitive prices. We take great pride in our work and our customer's satisfaction.
+			We are a local, family-owned, and operated garage door company with over 28 years of
+			experience. We offer quality commercial and residential installation and repairs for doors and
+			openers at competitive prices. We take great pride in our work and our customer's
+			satisfaction.
 		</p>
 
 		<div
@@ -196,7 +200,9 @@
 		<p
 			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-sm sm:text-Csm"
 		>
-            Our team specializes in providing a range of services to cater to your garage door needs. From repairing and installing to maintaining, we have got you covered. Additionally, we are adept at replacing and maintaining torsion springs, which is a frequent issue.
+			Our team specializes in providing a range of services to cater to your garage door needs. From
+			repairing and installing to maintaining, we have got you covered. Additionally, we are adept
+			at replacing and maintaining torsion springs, which is a frequent issue.
 		</p>
 		<div
 			class="flex h-72 sm:p-0 p-4 col-span-2 sm:col-span-1 relative sm:h-full sm:w-full flex-col justify-end items-center"
@@ -216,9 +222,6 @@
 	<FreeToQuote />
 	<ServicePhoto />
 </section>
-
-
-
 
 <style>
 	.picCenter {

@@ -3,32 +3,30 @@
 
 	let dcArr = [];
 	let i = 0;
-	for(let dc in $doorColors){
+	for (let dc in $doorColors) {
 		dcArr[i] = dc;
 		i++;
 	}
-
 </script>
 
 <div class="door-types-container justify-between gap-4 flex flex-row w-full md:w-auto md:gap-20">
-	<div class="flex flex-col w-auto h-full items-start justify-center">
+	<h2 class="flex flex-col w-auto h-full items-start justify-center">
 		<span class="available text-Clg md:text-Cbase text-accent font-extrabold text-left"
 			>Available</span
 		>
-		<h4
+		<span
 			class="colors-h4 text-left sm:leading-[4rem] sm:text-C4xl text-C6xl md:text-Cxl leading-10 text-white font-extrabold"
 		>
 			Colors
-		</h4>
-	</div>
+		</span>
+	</h2>
 	<div class="color-box flex flex-row w-auto gap-2 h-full items-center">
 		{#await dcArr}
 			<p class="text-white">loading...</p>
 		{:then Door}
 			{#each Door as DC}
-				<span style="background-color:{DC}"></span>
+				<span style="background-color:{DC}" />
 			{/each}
-
 		{/await}
 	</div>
 </div>

@@ -3,9 +3,6 @@
 	import Icon from '@iconify/svelte';
 	import { fly } from 'svelte/transition';
 
-
-
-
 	let hider = false;
 	//toggles the nav bar.
 
@@ -19,9 +16,6 @@
 		{ name: 'Gallery', href: '/gallery' },
 		{ name: 'Contact', href: '/contact' }
 	];
-
-
-
 </script>
 
 <nav style:visibility="visible">
@@ -46,19 +40,19 @@
 		<!-- Slider End
 		
 		-->
-		<nav class="m-auto pt-8">
+		<nav class="m-auto pt-8" aria-label="Site Navigation">
 			<div
-				class="min-w-full sm:justify-between flex h-20 justify-start sm:gap-0 gap-4 items-center"
+				class="min-w-full sm:justify-between flex h-20 justify-start sm:gap-0 gap-4 items-center pb-4"
 			>
 				<!--  Icon  -->
-                
-                <button on:click={navDisplay} class="w-10 h-auto sm:hidden self-start text-primary">
+
+				<button on:click={navDisplay} class="w-10 h-auto sm:hidden self-start text-primary">
 					<div class=" relative mt-1.5 z-10 self-start">
 						<Icon class="" height={28} icon="ci:hamburger" />
 					</div>
 				</button>
 				<a class="z-10" href="/">
-					<header class="text-white z-20  text-Clg uppercase whitespace-nowrap font-extralight">
+					<header class="text-white z-20 text-Clg uppercase whitespace-nowrap font-extralight">
 						Tulsa | Sapulpa
 						<br class="lg:hidden" /> Garage Doors
 					</header>
