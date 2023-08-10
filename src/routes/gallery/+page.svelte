@@ -52,8 +52,7 @@
 	<div class="hidden md:wrapper justify-center">
 		<section class="hidden w-full md:grid grid-flow-row mt-32">
 			<LargeSlider {data} />
-
-			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 min-w-full">
+			<div class="bottom-grid-container mt-4 p-2 grid grid-flow-col gap-4 min-w-full">
 				<div class="flex w-auto flex-col gap-2 items-start">
 					<h1 class="text-Cxl text-white">Gallery</h1>
 					<p class="text-accent text-Cbase font-bold">

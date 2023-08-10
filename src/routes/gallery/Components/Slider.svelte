@@ -6,13 +6,9 @@
 
 	export let data: any;
 
-	console.log(data);
-
 	$: $alterable = data[$doorOptions].fields[$doorOptions];
 
 	$: $images = $alterable.map((img: any) => img.fields.file?.url);
-
-	$: console.log($images);
 
 	let initialPos = 0,
 		prevTranslate = 0,
@@ -27,22 +23,20 @@
 	const stopWeird = (e: any) => e.preventDefault();
 
 	const initialized = (e: any) => {
-		return () => {
+		e.preventDefault();
+		window.oncontextmenu = (e: any) => {
 			e.preventDefault();
-			window.oncontextmenu = (e: any) => {
-				e.preventDefault();
-				e.stopPropagation();
-			};
-
-			picWidth = e.target.getBoundingClientRect().width;
-			grab = !grab;
-			grabbing = !grabbing;
-
-			isMoving = !isMoving;
-			initialPos = currentPositionX(e);
-
-			animationID = requestAnimationFrame(animation);
+			e.stopPropagation();
 		};
+
+		picWidth = e.target.getBoundingClientRect().width;
+		grab = !grab;
+		grabbing = !grabbing;
+
+		isMoving = !isMoving;
+		initialPos = currentPositionX(e);
+
+		animationID = requestAnimationFrame(animation);
 	};
 
 	const moving = (e: any) => {
@@ -131,19 +125,18 @@
 					loading...
 				</p>
 			{:then Images}
-				{#each Images as door, i (door)}
-					{#key Images}
+				{#key Images}
+					{#each Images as door, i (door)}
 						<img
 							src={door}
-							alt=""
+							alt="carousel of door images"
 							class="slider-images max-h-[450px] min-h-[450px] sm:h-[950px] touch-pan-x"
 							bind:this={door}
 							on:mousemove={moving}
 							on:mouseup={concluded}
-							on:mousedown={(e) => initialized(e)()}
+							on:mousedown={(e) => initialized(e)}
 						/>
-					{/key}
-				{/each}
+					{/each}{/key}
 			{/await}
 		</li>
 	</ul>
