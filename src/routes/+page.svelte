@@ -95,21 +95,20 @@
 			request a free estimate from us!
 		</p>
 
-		<Button
-			hidden="hidden"
-			width="28"
-			weight={'bold'}
-			text="Call Us!"
-			radius="lg"
-			textSize="Cbase"
-		/>
+		<a
+			href="tel:918-224-2323"
+			class="w-28 hidden sm:block font-bold p-2 text-Csm hover:bg-sky-600 bg-primary text-center rounded transition-all ease-in-out text-white"
+			>Call Us!</a
+		>
 
 		<img class="h-20 hidden 2xl:block" src="arrows_down.svg" alt="" />
 	</div>
 
 	<div class="flex sm:hidden relative sm:h-min justify-center px-8 sm:items-center">
-		<button class="h-11 sm:hidden text-Cmd text-white font-medium bg-primary rounded w-32"
-			><a href="/contact">Call Us</a></button
+		<a
+			href="tel:918-224-2323"
+			class="w-28 sm:hidden font-bold p-2 text-Csm hover:bg-sky-600 bg-primary text-center rounded transition-all ease-in-out text-white"
+			>Call Us!</a
 		>
 
 		<!--Button  -->

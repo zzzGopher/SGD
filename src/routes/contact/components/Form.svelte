@@ -3,7 +3,7 @@
 </script>
 
 <form action="submit">
-	<div class="flex flex-col w-min gap-10 items-start">
+	<div class="flex flex-col whitespace-nowrap w-min gap-10 items-start">
 		<h1 class=" text-Clg text-white text-start w-full md:mt-28 uppercase">Contact Us</h1>
 		<input class="custom_outline w-2/3" type="text" placeholder="First Name" />
 		<input class="custom_outline w-2/3" type="text" placeholder="Last Name" />

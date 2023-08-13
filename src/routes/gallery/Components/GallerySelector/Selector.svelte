@@ -4,36 +4,44 @@
 	import { quintInOut } from 'svelte/easing';
 	import { active } from './MenuActiveStore';
 	import { doorOptions, currentIndex } from '../../../../Stores/ImageStore';
+	import type { Dtypes } from '$lib/types/doorTypes';
+
+	const ListOfDoorTypes: Dtypes = ['All', 'Steel on Steel', 'Residential', 'Decorative'];
 
 	function Toggle(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
 		$active = !$active;
-		console.log($active);
 	}
 
-	function lower(target) {
+	function lower(target: any) {
 		return target
 			.split(...' ')
 			.join('')
 			.toLowerCase();
 	}
 
-	$: selectedDoorType = (e) => {
+	$: selectedDoorType = (e: any) => {
 		$currentIndex = 0;
-		$doorOptions = lower(e.target.firstChild.data);
+		$doorOptions = lower(e.currentTarget.innerText);
 		console.log($doorOptions);
 	};
 </script>
 
 <div class="selector-container w-full">
 	<ul
-		on:click={selectedDoorType}
 		class="hidden list-container h-auto pt-4 md:flex justify-start gap-2 text-center items-center whitespace-nowrap"
 	>
-		<li class="list-items">All</li>
-		<li class="list-items">Steel on Steel</li>
-		<li class="list-items">Residential</li>
-		<li class="list-items">Decorative</li>
+		{#each ListOfDoorTypes as desktopDoorType, i}
+			{#key desktopDoorType}
+				<li
+					on:click={(e) => selectedDoorType(e)}
+					on:keydown={(e) => selectedDoorType(e)}
+					class="list-items"
+				>
+					{desktopDoorType}
+				</li>
+			{/key}
+		{/each}
 	</ul>
 </div>
 
@@ -48,15 +56,21 @@
 	</button>
 	{#if $active}
 		<ul
-			on:click={selectedDoorType}
 			class:active
 			transition:fade={{ duration: 500, easing: quintInOut }}
 			class="dropdown-list-container flex-col hidden w-52 h-40 rounded-xl bg-white text-center mt-60 absolute z-10 items-center justify-center shadow-xl"
 		>
-			<li class="dropdown-list-items rounded-t-xl"><span>All</span></li>
-			<li class="dropdown-list-items"><span>Steel on steel</span></li>
-			<li class="dropdown-list-items"><span>Residential</span></li>
-			<li class="dropdown-list-items rounded-b-xl"><span>Decorative</span></li>
+			{#each ListOfDoorTypes as dt, i}
+				{#key dt}
+					<li
+						on:click={(e) => selectedDoorType(e)}
+						on:keydown={(e) => selectedDoorType(e)}
+						class="dropdown-list-items rounded-t-xl"
+					>
+						<span>{dt}</span>
+					</li>
+				{/key}
+			{/each}
 		</ul>{/if}
 </div>
 

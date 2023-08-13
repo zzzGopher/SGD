@@ -1,11 +1,13 @@
 <script lang="ts">
-	export let selected: number | string;
+	export let id: string;
 	export let slideFunction: any;
 	export let text: any;
+	export let selected: boolean;
 </script>
 
 <button
-	id={selected}
+	{id}
+	class:selected
 	on:click={slideFunction}
 	class="hover:text-primary transition-all ease-in-out underline">{text}</button
 >

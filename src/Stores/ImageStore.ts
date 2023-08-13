@@ -1,6 +1,6 @@
 import { type Writable, writable } from 'svelte/store';
 
-export const doorOptions: Writable<string> = writable('all');
+export const doorOptions: Writable<any> = writable('all');
 
 export const alterable: Writable<any> = writable();
 

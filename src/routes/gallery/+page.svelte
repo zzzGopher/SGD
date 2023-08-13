@@ -6,14 +6,18 @@
 	import LargeSlider from './Components/LargeSlider/LargeSlider.svelte';
 	import Selector from './Components/GallerySelector/Selector.svelte';
 	import { active } from './Components/GallerySelector/MenuActiveStore';
-	import { doorColors } from '../../Stores/ImageStore';
+	import { doorColors, images, alterable, doorOptions } from '../../Stores/ImageStore';
 
 	function CloseMenu(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
 		if (e.target !== document.querySelector('.drop-down-button')) $active = false;
 	}
 
-	export let data;
+	export let data: Record<string, any>;
+
+	$: $alterable = data[$doorOptions].fields[$doorOptions];
+
+	$: $images = $alterable.map((img: any) => img.fields.file.url);
 
 	$doorColors = data.all.fields.colors;
 </script>

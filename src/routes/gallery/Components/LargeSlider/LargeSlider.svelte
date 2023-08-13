@@ -2,43 +2,25 @@
 	import { quintInOut } from 'svelte/easing';
 	import { fade, slide } from 'svelte/transition';
 	import { groupImagesIntoSixArr } from '$lib/utils/arraySorters';
-	import { doorOptions, images, alterable } from '../../../../Stores/ImageStore';
+	import { images } from '../../../../Stores/ImageStore';
 	import ImgArrNavButton from '$lib/components/imgArrNavButton.svelte';
 	import { incrementIndexID } from '$lib/utils/incrementIndexID';
+	import { onMount } from 'svelte';
 
 	export let data: any;
 
-	$: $alterable = data[$doorOptions].fields[$doorOptions];
-
-	$: $images = $alterable.map((img: any) => img.fields.file?.url);
+	let selected = false;
 
 	$: finalImageArr = groupImagesIntoSixArr($images);
 
-	let selected = 'one';
-
 	$: firstImages = finalImageArr[0];
 
-	function slideToNextImages(e: any, arr: any): string[] {
+	function slideToNextImages(e: any, arr: any): void {
 		e.preventDefault();
+
 		let id = e.currentTarget.id;
-		switch (id) {
-			case '0':
-				selected = 'one';
-				break;
-			case '1':
-				selected = 'two';
-				break;
-			case '2':
-				selected = 'three';
-				break;
-			default:
-				selected = 'one';
-		}
-		if (finalImageArr[id] !== arr) {
-			firstImages = arr[id];
-			return arr;
-		}
-		return arr;
+
+		firstImages = arr[id];
 	}
 
 	//TODO optimize all web image sizes to pass lighthouse score. and fix layout shift.
@@ -52,11 +34,14 @@
 		<div class="flex w-full -bottom-14 p-4 justify-center absolute">
 			<div class="flex text-white font-medium gap-8">
 				{#each finalImageArr as fir, i}
-					<ImgArrNavButton
-						text={incrementIndexID(i)}
-						selected={i}
-						slideFunction={(e) => slideToNextImages(e, finalImageArr)}
-					/>
+					{#key fir}
+						<ImgArrNavButton
+							{selected}
+							text={incrementIndexID(i)}
+							id={i.toString()}
+							slideFunction={(e) => slideToNextImages(e, finalImageArr)}
+						/>
+					{/key}
 				{/each}
 			</div>
 		</div>{/if}
@@ -83,12 +68,10 @@
 						in:slide={{ duration: 1500, easing: quintInOut, axis: 'x' }}
 						on:click={() => {
 							let cloneArr = Images.slice(0);
-
 							Images = [...cloneArr.splice(i), ...cloneArr];
 						}}
 						on:keydown={() => {
 							let cloneArr = Images.slice(0);
-
 							Images = [...cloneArr.splice(i), ...cloneArr];
 						}}
 						src={pic}

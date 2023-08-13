@@ -2,13 +2,9 @@
 	import LeftArrowIcon from './LeftArrowIcon.svelte';
 	import RightArrowIcon from './RightArrowIcon.svelte';
 	import type { svg_size } from './svg_size';
-	import { alterable, doorOptions, images, currentIndex } from '../../../Stores/ImageStore';
+	import { images, currentIndex } from '../../../Stores/ImageStore';
 
 	export let data: any;
-
-	$: $alterable = data[$doorOptions].fields[$doorOptions];
-
-	$: $images = $alterable.map((img: any) => img.fields.file?.url);
 
 	let initialPos = 0,
 		prevTranslate = 0,
