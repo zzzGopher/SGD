@@ -1,6 +1,6 @@
 # Sapulpa Garage Doors Web Application
 
-## Technologies used SvelteKit, Vercel, Emailjs, Vite, Typescript, Contentful, and Sveltekit Server Components.
+## Technologies used SvelteKit, Vercel, Emailjs, Vite, TailwindCSS, Typescript, Contentful, and Sveltekit Server Components.
 
 ```bash
 # create a new project in the current directory
