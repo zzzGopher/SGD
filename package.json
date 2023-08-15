@@ -43,6 +43,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^3.11.0",
 		"contentful": "^10.2.3"
 	}
 }

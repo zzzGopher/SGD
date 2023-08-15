@@ -5,9 +5,13 @@
 	export let width: number | string = 'auto';
 	export let weight = 'default';
 	export let hidden = 'visible';
+	export let type: any = undefined;
+	export let value: string | undefined = undefined;
 </script>
 
 <button
+	{type}
+	{value}
 	class="bg-primary w-{width} {hidden} sm:block font-{weight} p-2 rounded-{radius} text-{textSize} hover:bg-sky-600 transition-all ease-in-out text-white"
 	>{text}</button
 >

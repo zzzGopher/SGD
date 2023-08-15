@@ -1,0 +1,6 @@
+import { useSGmail } from './sendgridapi';
+export async function GET({ request }) {
+    const res = await useSGmail(request);
+    return new Response(res);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiK3NlcnZlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9yb3V0ZXMvYXBpL3NlcnZlci8rc2VydmVyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFMUMsTUFBTSxDQUFDLEtBQUssVUFBVSxHQUFHLENBQUMsRUFBRSxPQUFPLEVBQUU7SUFDcEMsTUFBTSxHQUFHLEdBQUcsTUFBTSxTQUFTLENBQUMsT0FBTyxDQUFDLENBQUM7SUFDckMsT0FBTyxJQUFJLFFBQVEsQ0FBQyxHQUFHLENBQUMsQ0FBQztBQUMxQixDQUFDIn0=
