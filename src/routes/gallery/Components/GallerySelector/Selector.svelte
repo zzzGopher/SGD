@@ -33,6 +33,7 @@
 		{#each ListOfDoorTypes as desktopDoorType, i}
 			{#key desktopDoorType}
 				<li
+					on:touchstart={(e) => selectedDoorType(e)}
 					on:click={(e) => selectedDoorType(e)}
 					on:keydown={(e) => selectedDoorType(e)}
 					class="list-items"
