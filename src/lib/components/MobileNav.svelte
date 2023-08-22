@@ -36,7 +36,7 @@
 		position: absolute;
 		width: 28px;
 		height: 28px;
-		top: 3%;
+		top: 10%;
 		left: 20%;
 	}
 
