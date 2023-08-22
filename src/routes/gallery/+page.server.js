@@ -25,13 +25,17 @@ const client = contentful.createClient
 // fetching from contentful
 
 export async function load() {
-	return {
-		doorPics: await client.getAssets({
-			limit: 100
-		}),
-		all: await client.getEntry(ALL_ENTRY),
-		decorative: await client.getEntry(DECORATIVE_ENTRY),
-		steelonsteel: await client.getEntry(STEEL_ENTRY),
-		residential: await client.getEntry(RESIDENTIAL_ENTRY)
-	};
+	try {
+		return {
+			doorPics: await client.getAssets({
+				limit: 100
+			}),
+			all: await client.getEntry(ALL_ENTRY),
+			decorative: await client.getEntry(DECORATIVE_ENTRY),
+			steelonsteel: await client.getEntry(STEEL_ENTRY),
+			residential: await client.getEntry(RESIDENTIAL_ENTRY)
+		};
+	} catch (e) {
+		console.log(e);
+	}
 }

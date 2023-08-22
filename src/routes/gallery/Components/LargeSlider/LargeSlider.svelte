@@ -1,80 +1,51 @@
 <script lang="ts">
 	import { quintInOut } from 'svelte/easing';
 	import { fade, slide } from 'svelte/transition';
-	import { groupImagesIntoSixArr, splitStringArr } from '$lib/functions/arraySorters';
-	import { doorOptions, images, alterable } from '../../../../Stores/ImageStore';
+	import { groupImagesIntoSixArr } from '$lib/utils/arraySorters';
+	import { images } from '../../../../Stores/ImageStore';
+	import ImgArrNavButton from '$lib/components/imgArrNavButton.svelte';
+	import { incrementIndexID } from '$lib/utils/incrementIndexID';
+	import { onMount } from 'svelte';
 
-	export let data;
+	export let data: any;
 
+	let selected = false;
 
-
-	$: $alterable = data[$doorOptions].fields[$doorOptions];
-
-	$: $images = $alterable.map((img)=>img.fields.file?.url);
-
-	let emptyArr: any[] = [[]];
-
-
-
-	$: buildingArr = splitStringArr(emptyArr, $images);
-
-	$: finalImageArr = groupImagesIntoSixArr(buildingArr);
-
-	let selected = 'one';
+	$: finalImageArr = groupImagesIntoSixArr($images);
 
 	$: firstImages = finalImageArr[0];
 
-	function slideToNextImages(e, arr: string[]): string[] {
+	function slideToNextImages(e: any, arr: any): void {
 		e.preventDefault();
+
 		let id = e.currentTarget.id;
-		switch (id) {
-			case '0':
-				selected = 'one';
-				break;
-			case '1':
-				selected = 'two';
-				break;
-			case '2':
-				selected = 'three';
-				break;
-			default:
-				selected = 'one';
-		}
-		if (finalImageArr[id] !== arr) {
-			firstImages = arr[id];
-			return arr;
-		}
-		return arr;
+
+		firstImages = arr[id];
 	}
 
 	//TODO optimize all web image sizes to pass lighthouse score. and fix layout shift.
+	//TODO fix class selection on ImgArrNavButton
 </script>
+
 <div
 	class="hidden min-w-full m-auto large-slider-container w-full justify-center relative md:flex gap-2 p-2"
 >
-	{#if $images.length > 6}
-	<div class="flex w-full -bottom-14 p-4 justify-center absolute">
-		<div class="flex text-white font-medium gap-8">
-			<button
-				class:selected={selected === 'one'}
-				id={0}
-				on:click={(e) => slideToNextImages(e, finalImageArr)}
-				class="hover:text-primary transition-all ease-in-out underline">1</button
-			>
-			<button
-				class:selected={selected === 'two'}
-				id={1}
-				on:click={(e) => slideToNextImages(e, finalImageArr)}
-				class="hover:text-primary transition-all ease-in-out underline">2</button
-			>
-			<button
-				class:selected={selected === 'three'}
-				id={2}
-				on:click={(e) => slideToNextImages(e, finalImageArr)}
-				class="hover:text-primary transition-all ease-in-out underline">3</button
-			>
-		</div>
-	</div>{/if}
+	{#if finalImageArr.length > 1}
+		<div class="flex w-full -bottom-14 p-4 justify-center absolute">
+			<div class="flex text-white font-medium gap-8">
+				{#each finalImageArr as fir, i}
+					{#key fir}
+						<ImgArrNavButton
+							{selected}
+							text={incrementIndexID(i)}
+							id={i.toString()}
+							slideFunction={(e) => slideToNextImages(e, finalImageArr)}
+						/>
+					{/key}
+				{/each}
+			</div>
+		</div>{/if}
+
 	{#await firstImages}
 		<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
 	{:then Images}
@@ -97,7 +68,10 @@
 						in:slide={{ duration: 1500, easing: quintInOut, axis: 'x' }}
 						on:click={() => {
 							let cloneArr = Images.slice(0);
-
+							Images = [...cloneArr.splice(i), ...cloneArr];
+						}}
+						on:keydown={() => {
+							let cloneArr = Images.slice(0);
 							Images = [...cloneArr.splice(i), ...cloneArr];
 						}}
 						src={pic}
@@ -114,8 +88,5 @@
 <style>
 	.large-slider-image2:hover {
 		scale: 0.9;
-	}
-	.selected {
-		@apply text-primary;
 	}
 </style>

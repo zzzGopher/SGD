@@ -6,14 +6,18 @@
 	import LargeSlider from './Components/LargeSlider/LargeSlider.svelte';
 	import Selector from './Components/GallerySelector/Selector.svelte';
 	import { active } from './Components/GallerySelector/MenuActiveStore';
-	import { doorColors } from '../../Stores/ImageStore';
+	import { doorColors, images, alterable, doorOptions } from '../../Stores/ImageStore';
 
 	function CloseMenu(e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
 		if (e.target !== document.querySelector('.drop-down-button')) $active = false;
 	}
 
-	export let data;
+	export let data: Record<string, any>;
+
+	$: $alterable = data[$doorOptions].fields[$doorOptions];
+
+	$: $images = $alterable.map((img: any) => img.fields.file.url);
 
 	$doorColors = data.all.fields.colors;
 </script>
@@ -25,7 +29,7 @@
 	/>
 </svelte:head>
 
-<html lang="en" id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
+<div lang="en" id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
 	<section class="md:hidden m-auto min-h-min sm:min-h-screen max-w-7xl py-8 wrapper">
 		<div class=" flex gap-8 p-4 flex-col items-start justify-center w-full py-8">
 			<GalleryHeader />
@@ -52,8 +56,7 @@
 	<div class="hidden md:wrapper justify-center">
 		<section class="hidden w-full md:grid grid-flow-row mt-32">
 			<LargeSlider {data} />
-
-			<div class="bottom-grid-container p-2 grid grid-flow-col gap-4 min-w-full">
+			<div class="bottom-grid-container mt-4 p-2 grid grid-flow-col gap-4 min-w-full">
 				<div class="flex w-auto flex-col gap-2 items-start">
 					<h1 class="text-Cxl text-white">Gallery</h1>
 					<p class="text-accent text-Cbase font-bold">
@@ -70,7 +73,7 @@
 			</div>
 		</section>
 	</div>
-</html>
+</div>
 
 <style>
 </style>

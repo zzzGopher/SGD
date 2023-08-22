@@ -4,12 +4,10 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import type { indexReference } from '$lib/types/indexReference.js';
+	import { navHider } from '../Stores/ImageStore';
 
-	let hider = false;
-	//toggles the nav bar.
-
-	function navDisplay() {
-		hider = !hider;
+	function navDisplay(e: any): void {
+		$navHider = !$navHider;
 	}
 
 	export const indexRefs: indexReference = [
@@ -22,7 +20,7 @@
 
 <nav style:visibility="visible">
 	<div class="m-auto max-w-7xl px-8">
-		<MobileNav {hider} {indexRefs} />
+		<MobileNav hider={$navHider} {indexRefs} hiderFunc={(e) => navDisplay(e)} />
 
 		<nav class="m-auto pt-8" aria-label="Site Navigation">
 			<div

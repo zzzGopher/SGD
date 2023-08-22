@@ -1,15 +1,56 @@
 <script lang="ts">
 	import Button from '$lib/components/Primary_button.svelte';
+	import emailjs from '@emailjs/browser';
+	import myRedirect from '../../../lib/utils/myRedirect';
+	import { messageSent } from '../../../Stores/ImageStore';
+
+	function sendEmail(e: any) {
+		try {
+			emailjs
+				.sendForm('service_taqk7tr', 'template_vod9j69', e.target, 'XhZg51U-UDQ8Vdv0u')
+				.then((res) => {
+					$messageSent = true;
+					console.log('SUCCESS:', res.text);
+				})
+				.then(() => myRedirect(4000));
+		} catch (e: any) {
+			$messageSent = false;
+			console.log('Email Failed:', e.text);
+		}
+	}
 </script>
 
-<form action="submit">
-	<div class="flex flex-col w-min gap-10 items-start">
-		<h1 class=" text-Clg text-white text-start w-full md:mt-28 uppercase">Contact Us</h1>
-		<input class="custom_outline w-2/3" type="text" placeholder="First Name" />
-		<input class="custom_outline w-2/3" type="text" placeholder="Last Name" />
-		<textarea class="custom_outline h-28" placeholder="Reason for Contacting" />
-		<input class="custom_outline w-3/5" type="text" placeholder="Phone Number" />
-		<Button width="28" text="Submit" radius="lg" />
+<form on:submit|preventDefault={sendEmail}>
+	<div class="flex flex-col whitespace-nowrap w-min gap-10 items-start">
+		<h1 class="text-Clg text-white text-start w-full md:mt-28 uppercase">Contact Us</h1>
+		<input
+			required
+			name="FirstName"
+			class="custom_outline w-2/3"
+			type="text"
+			placeholder="First Name"
+		/>
+		<input
+			required
+			name="LastName"
+			class="custom_outline w-2/3"
+			type="text"
+			placeholder="Last Name"
+		/>
+		<textarea
+			required
+			name="message"
+			class="custom_outline h-28"
+			placeholder="Reason for Contacting"
+		/>
+		<input
+			required
+			name="phone"
+			class="custom_outline w-3/5"
+			type="text"
+			placeholder="Phone Number"
+		/>
+		<Button type="submit" value="Submit" width="28" text="Submit" radius="lg" />
 	</div>
 </form>
 

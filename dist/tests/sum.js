@@ -1,0 +1,4 @@
+export function sum() {
+    return 1 + 2;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VtLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vdGVzdHMvc3VtLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sVUFBVSxHQUFHO0lBQ2xCLE9BQU8sQ0FBQyxHQUFHLENBQUMsQ0FBQztBQUNkLENBQUMifQ==

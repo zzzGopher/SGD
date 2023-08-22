@@ -4,7 +4,7 @@
 </script>
 
 <svg
-	class="z-30 absolute -bottom-10 sm:-left-48 right-48 w-48 sm:w-72 md:w-80 sm:-top-32 lg:w-2/3 lg:-left-[300px] 2xl:-left-[400px] 2xl:h-[500px]"
+	class="z-30 absolute -bottom-10 sm:-left-48 right-32 w-48 sm:w-72 md:w-80 sm:-top-32 lg:w-2/3 lg:-left-[200px] 2xl:-left-[400px] 2xl:h-[500px]"
 	{width}
 	{height}
 	viewBox="0 0 471 377"
