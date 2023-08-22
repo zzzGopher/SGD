@@ -56,13 +56,15 @@
 			class="dropdown-list-container flex-col hidden w-52 h-40 rounded-xl bg-white text-center mt-60 absolute z-10 items-center justify-center shadow-xl"
 		>
 			{#each ListOfDoorTypes as dt, i}
-				<li
-					on:click={selectedDoorType}
-					on:keydown={selectedDoorType}
-					class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
-				>
-					<span>{dt}</span>
-				</li>
+				{#key dt}
+					<li
+						on:click={selectedDoorType}
+						on:keydown={selectedDoorType}
+						class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
+					>
+						<span on:click={selectedDoorType} on:keydown={selectedDoorType}>{dt}</span>
+					</li>
+				{/key}
 			{/each}
 		</ul>{/if}
 </div>
