@@ -11,15 +11,15 @@
 	/>
 </svelte:head>
 
-<div class="contact-wrapper mt-20 w-screen min-h-screen grid">
+<div class="contact-wrapper md:mt-20 mt-10 w-screen min-h-screen grid">
 	<div class="contact-form-container grid w-screen gap-4 grid-flow-row md:grid-flow-col">
 		<div
-			class="form-container relative rounded-r-lg flex items-start justify-center md:justify-end md:pr-12 w-full h-min md:h-full p-4 py-20"
+			class="form-container relative md:rounded-r-lg flex items-start justify-center md:justify-end md:pr-12 w-full h-min md:h-full p-4 py-20"
 		>
 			<MessageModal />
 			<Form />
 		</div>
-		<div class="information-map-container w-full h-full p-4 py-20 text-center md:text-left">
+		<div class="information-map-container w-full h-full p-4 py-10 text-center md:text-left">
 			<h2 class="door-info text-C2xl text-white font-custom">Get In Touch</h2>
 			<br />
 			<p class="door-info-paragraph text-accent font-custom text-Cbase font-bold">

@@ -2,23 +2,37 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<div class="flex h-24 flex-col gap-2 py-8 bg-footer_color justify-center items-center">
-	<a href="/" class="hover:text-black text-gray-500 w-0">
-		<Icon color="black" icon="akar-icons:facebook-fill" width={28} />
-	</a>
+<div class="flex h-16 flex-col gap-2 bg-footer_color justify-center items-center">
+	<div class="flex w-full flex-row items-center justify-center gap-8 lg:gap-20">
+		<a
+			href="https://www.facebook.com/SapulpaGarageDoors"
+			class="hover:text-black w-min text-gray-500"
+		>
+			<Icon
+				class="hover:scale-110"
+				alt="link to facebook"
+				color="black"
+				icon="akar-icons:facebook-fill"
+				width={28}
+			/>
+		</a>
 
-	<div class="flex w-full flex-row items-center justify-around">
-		<a href="/" class="text-black hover_footer text-xs sm:text-lg">Facebook</a>
+		<a class="sm:text-xl text-black hover:text-black" href="/">Developed by &#169 Frogip</a>
 
-		<a class="sm:text-2xl text-black hover:text-black" href="/">Developed by &#169 Frogip</a>
-
-		<a href="/" class="text-black hover_footer text-xs sm:text-lg">Yelp</a>
+		<a
+			href="https://www.yelp.com/biz/sapulpa-garage-doors-sapulpa"
+			class="text-black hover_footer text-xs sm:text-lg"
+		>
+			<img
+				src="Yelp.png"
+				alt="link to yelp page"
+				height="80px"
+				width="80px"
+				class="w-14 sm:w-[80px] hover:scale-110"
+			/></a
+		>
 	</div>
 </div>
 
 <style>
-	.hover_footer:hover {
-		color: black;
-		transform: scale(1.2);
-	}
 </style>

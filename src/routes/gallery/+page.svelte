@@ -45,12 +45,6 @@
 				>
 			</div>
 		</div>
-		<img
-			loading="lazy"
-			class="absolute h-auto bottom-0 -z-10 right-0"
-			src={'background.svg'}
-			alt="background"
-		/>
 	</section>
 	<!--Large Screen Section-->
 	<div class="hidden md:wrapper justify-center">

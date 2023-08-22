@@ -31,16 +31,20 @@
 
 @layer base {
 	html {
+		scroll-behavior: smooth;
 		font-family: Inter;
 		overflow-x: hidden;
 		@apply bg-secondary;
 	}
 
 	html #gallery {
-		background-image: url('/background.svg');
+		background-image: url('background.svg');
 		background-repeat: no-repeat;
 		background-position: bottom right;
 		background-size: 80rem;
+		@media screen and (min-width: 768px) {
+		background-position-y: 30px;
+		}
 
 	}
 

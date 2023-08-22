@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section aria-label="products section">
+<section id="products" aria-label="products section">
 	<div class=" flex flex-col justify-center items-center gap-2">
 		<h2 class="text-Clg text-white pb-4">Our Products</h2>
 	</div>

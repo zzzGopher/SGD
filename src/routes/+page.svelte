@@ -29,6 +29,8 @@
 		const newCounter = new (numberCounter as any)(el, 50);
 		newCounter.runCount();
 	});
+
+	//TODO add links and style to Gallery, About US, and Services.
 </script>
 
 <svelte:head>
@@ -138,7 +140,7 @@
 		<h2
 			class="sm:hidden sm:col-span-1 sm:z-10 sm:items-center sm:justify-center sm:bg-primary sm:h-12 sm:w-32 sm:rounded text-center font-light text-Cxl sm:text-Cbase sm:col-start-2 sm:row-start-1 col-span-2"
 		>
-			Gallery
+			<a class="underline decoration-primary" href="/gallery"> Gallery</a>
 		</h2>
 
 		<p
@@ -165,7 +167,7 @@
 		<h2
 			class="sm:hidden float-right z-10 font-light text-Cxl sm:col-span-1 col-span-2 text-center sm:col-start-1 sm:row-start-1"
 		>
-			About Us
+			<a class="underline decoration-primary" href="/about">About Us</a>
 		</h2>
 		<p
 			class="w-full place-self-center text-center col-span-2 sm:hidden font-light text-sm sm:text-Csm"
@@ -193,7 +195,7 @@
 		<h2
 			class=" sm:items-center sm:justify-center sm:text-Csm sm:bg-primary sm:rounded sm:h-10 sm:w-28 float-right font-light text-Cxl sm:col-span-1 z-10 col-span-2 text-center sm:col-start-3 sm:hidden sm:row-start-1"
 		>
-			Services
+			<a class="underline decoration-primary" href="/contact"> Location</a>
 		</h2>
 
 		<p
