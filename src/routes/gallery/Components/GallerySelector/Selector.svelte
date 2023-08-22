@@ -64,7 +64,7 @@
 					<li
 						on:click={(e) => selectedDoorType(e)}
 						on:keydown={(e) => selectedDoorType(e)}
-						class="dropdown-list-items rounded-t-xl"
+						class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
 					>
 						<span>{dt}</span>
 					</li>
