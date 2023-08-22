@@ -36,8 +36,8 @@
 		position: absolute;
 		width: 28px;
 		height: 28px;
-		top: 5%;
-		left: 25%;
+		top: 3%;
+		left: 20%;
 	}
 
 	.closer-x:hover {
