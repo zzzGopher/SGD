@@ -60,7 +60,7 @@
 					<li
 						on:click={selectedDoorType}
 						on:keydown={selectedDoorType}
-						class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
+						class="dropdown-list-items z-50 last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
 					>
 						<span>{dt}</span>
 					</li>
@@ -86,14 +86,14 @@
 	.dropdown-list-items {
 		@apply w-full h-12 flex items-center justify-center;
 	}
-	/*.dropdown-list-items:hover {*/
-	/*	color: white;*/
-	/*	cursor: pointer;*/
-	/*	transition: all ease-in-out 0.3s;*/
-	/*	@apply bg-primary;*/
-	/*}*/
-	/*.dropdown-list-items span:hover {*/
-	/*	scale: 1.1;*/
-	/*	transition: all ease-in-out 0.3s;*/
-	/*}*/
+	.dropdown-list-items:hover {
+		color: white;
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+		@apply bg-primary;
+	}
+	.dropdown-list-items span:hover {
+		scale: 1.1;
+		transition: all ease-in-out 0.3s;
+	}
 </style>
