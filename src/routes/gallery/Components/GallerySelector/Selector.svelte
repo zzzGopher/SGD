@@ -32,12 +32,7 @@
 	>
 		{#each ListOfDoorTypes as desktopDoorType, i}
 			{#key desktopDoorType}
-				<li
-					on:touchstart={(e) => selectedDoorType(e)}
-					on:click={(e) => selectedDoorType(e)}
-					on:keydown={(e) => selectedDoorType(e)}
-					class="list-items"
-				>
+				<li on:click={selectedDoorType} on:keydown={selectedDoorType} class="list-items">
 					{desktopDoorType}
 				</li>
 			{/key}
@@ -63,8 +58,8 @@
 			{#each ListOfDoorTypes as dt, i}
 				{#key dt}
 					<li
-						on:click={(e) => selectedDoorType(e)}
-						on:keydown={(e) => selectedDoorType(e)}
+						on:click={selectedDoorType}
+						on:keydown={selectedDoorType}
 						class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
 					>
 						<span>{dt}</span>
