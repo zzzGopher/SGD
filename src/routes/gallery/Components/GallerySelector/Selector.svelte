@@ -86,14 +86,14 @@
 	.dropdown-list-items {
 		@apply w-full h-12 flex items-center justify-center;
 	}
-	.dropdown-list-items:hover {
-		color: white;
-		cursor: pointer;
-		transition: all ease-in-out 0.3s;
-		@apply bg-primary;
-	}
-	.dropdown-list-items span:hover {
-		scale: 1.1;
-		transition: all ease-in-out 0.3s;
-	}
+	/*.dropdown-list-items:hover {*/
+	/*	color: white;*/
+	/*	cursor: pointer;*/
+	/*	transition: all ease-in-out 0.3s;*/
+	/*	@apply bg-primary;*/
+	/*}*/
+	/*.dropdown-list-items span:hover {*/
+	/*	scale: 1.1;*/
+	/*	transition: all ease-in-out 0.3s;*/
+	/*}*/
 </style>
