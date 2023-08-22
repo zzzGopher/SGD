@@ -9,7 +9,7 @@
 {#if hider}
 	<div
 		transition:fly={{ x: 500, duration: 1000 }}
-		class="nav_slide fixed flex flex-col items-center py-40 text-2xl justify-around gap-40 z-20 transition-all bg-primary h-screen right-0 w-1/2"
+		class="nav_slide fixed flex flex-col items-center py-40 text-2xl justify-around gap-10 z-20 transition-all bg-primary h-screen right-0 w-1/2"
 	>
 		<span on:click={hiderFunc} on:keydown={hiderFunc} class:closer-x={hider} />
 		{#each indexRefs as index, i}
