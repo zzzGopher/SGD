@@ -9,12 +9,18 @@
 		aria-label="product navigation"
 		class="dist_anchors_parent flex items-center justify-center gap-4 sm:gap-8 md:gap-20 w-full h-24 font-bold italic text-white text-[14px] whitespace-nowrap sm:text-Cbase bg-primary"
 	>
-		<a href="https://doorlinkmfg.com/">Door Link</a>
-		<a href="https://www.chiohd.com/">C.H.I Doors</a>
-		<a class="w-16 sm:w-28" href="/static"
-			><img src="garaga_finalp.svg" alt="Link to garaga doors home page" /></a
+		<a class="companies text-Cxs sm:text-Csm md:text-Cbase" href="https://doorlinkmfg.com/"
+			>Door Link</a
 		>
-		<a href="/static">Mid America</a>
+		<a class="companies text-Cxs sm:text-Csm md:text-Cbase" href="https://www.chiohd.com/"
+			>C.H.I Doors</a
+		>
+		<a class="companies text-Cxs sm:text-Csm md:text-Cbase" href="https://www.garaga.com/midamerica"
+			>Garaga</a
+		>
+		<a class="companies text-Cxs sm:text-Csm md:text-Cbase" href="https://www.garaga.com/midamerica"
+			>Mid America</a
+		>
 		<div
 			class="background-banner invisible md:visible absolute h-24 -z-10 bg-primary text-primary w-screen"
 		/>
