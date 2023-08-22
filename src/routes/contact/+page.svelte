@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Form from './components/Form.svelte';
 	import Map from './components/Map.svelte';
+	import MessageModal from './components/MessageModal.svelte';
 </script>
 
 <svelte:head>
@@ -13,8 +14,9 @@
 <div class="contact-wrapper mt-20 w-screen min-h-screen grid">
 	<div class="contact-form-container grid w-screen gap-4 grid-flow-row md:grid-flow-col">
 		<div
-			class="form-container rounded-r-lg flex items-start justify-center md:justify-end md:pr-12 w-full h-min md:h-full p-4 py-20"
+			class="form-container relative rounded-r-lg flex items-start justify-center md:justify-end md:pr-12 w-full h-min md:h-full p-4 py-20"
 		>
+			<MessageModal />
 			<Form />
 		</div>
 		<div class="information-map-container w-full h-full p-4 py-20 text-center md:text-left">

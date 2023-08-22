@@ -29,7 +29,7 @@
 	/>
 </svelte:head>
 
-<html lang="en" id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
+<div lang="en" id="gallery" on:keydown={CloseMenu} on:click={CloseMenu}>
 	<section class="md:hidden m-auto min-h-min sm:min-h-screen max-w-7xl py-8 wrapper">
 		<div class=" flex gap-8 p-4 flex-col items-start justify-center w-full py-8">
 			<GalleryHeader />
@@ -73,7 +73,7 @@
 			</div>
 		</section>
 	</div>
-</html>
+</div>
 
 <style>
 </style>

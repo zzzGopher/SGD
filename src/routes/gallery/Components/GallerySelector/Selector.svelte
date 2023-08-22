@@ -23,7 +23,6 @@
 	$: selectedDoorType = (e: any) => {
 		$currentIndex = 0;
 		$doorOptions = lower(e.currentTarget.innerText);
-		console.log($doorOptions);
 	};
 </script>
 

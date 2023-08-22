@@ -2,32 +2,24 @@
 	import Button from '$lib/components/Primary_button.svelte';
 	import emailjs from '@emailjs/browser';
 	import myRedirect from '../../../lib/utils/myRedirect';
-
-	let success = false;
+	import { messageSent } from '../../../Stores/ImageStore';
 
 	function sendEmail(e: any) {
 		try {
 			emailjs
 				.sendForm('service_taqk7tr', 'template_vod9j69', e.target, 'XhZg51U-UDQ8Vdv0u')
 				.then((res) => {
-					success = true;
+					$messageSent = true;
 					console.log('SUCCESS:', res.text);
 				})
 				.then(() => myRedirect(4000));
 		} catch (e: any) {
-			success = false;
+			$messageSent = false;
 			console.log('Email Failed:', e.text);
 		}
 	}
-
-	//TODO adjust modal width and position with shared state presumably.
 </script>
 
-{#if success}
-	<div class="modal -mt-14 mr-14 sm:m-auto text-primary text-center text-Clg absolute">
-		Message Sent
-	</div>
-{/if}
 <form on:submit|preventDefault={sendEmail}>
 	<div class="flex flex-col whitespace-nowrap w-min gap-10 items-start">
 		<h1 class="text-Clg text-white text-start w-full md:mt-28 uppercase">Contact Us</h1>
