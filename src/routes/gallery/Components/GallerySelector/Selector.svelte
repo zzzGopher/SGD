@@ -21,6 +21,7 @@
 	}
 
 	$: selectedDoorType = (e: any) => {
+		$active = !$active;
 		$currentIndex = 0;
 		$doorOptions = lower(e.currentTarget.innerText);
 	};
@@ -57,11 +58,7 @@
 		>
 			{#each ListOfDoorTypes as dt, i}
 				{#key dt}
-					<li
-						on:click={selectedDoorType}
-						on:keydown={selectedDoorType}
-						class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl"
-					>
+					<li class="dropdown-list-items last-of-type:rounded-b-xl first-of-type:rounded-t-xl">
 						<span on:click={selectedDoorType} on:keydown={selectedDoorType}>{dt}</span>
 					</li>
 				{/key}
