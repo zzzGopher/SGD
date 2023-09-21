@@ -53,7 +53,6 @@
 			{#if i === 0}
 				<div class="large-slider-image-container">
 					<img
-						loading="lazy"
 						draggable="false"
 						in:fade={{ duration: 1500, easing: quintInOut }}
 						src={pic}

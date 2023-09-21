@@ -21,36 +21,38 @@
 </script>
 
 <form on:submit|preventDefault={sendEmail}>
-	<div class="flex flex-col whitespace-nowrap w-min gap-10 items-start">
-		<h1 class="text-Clg text-white text-start w-full md:mt-28 uppercase">Contact Us</h1>
+	<div class="flex flex-col whitespace-nowrap w-min gap-10 items-center md:items-start">
+		<h1 class="text-Clg text-white text-center md:text-start w-full md:mt-28 uppercase">
+			Contact Us
+		</h1>
 		<input
 			required
 			name="FirstName"
-			class="custom_outline w-2/3"
+			class="custom_outline w-fit"
 			type="text"
 			placeholder="First Name"
 		/>
 		<input
 			required
 			name="LastName"
-			class="custom_outline w-2/3"
+			class="custom_outline w-fit"
 			type="text"
 			placeholder="Last Name"
 		/>
 		<textarea
 			required
 			name="message"
-			class="custom_outline h-28"
+			class="custom_outline h-28 w-full"
 			placeholder="Reason for Contacting"
 		/>
 		<input
 			required
 			name="phone"
-			class="custom_outline w-3/5"
+			class="custom_outline w-full"
 			type="text"
 			placeholder="Phone Number"
 		/>
-		<Button type="submit" value="Submit" width="28" text="Submit" radius="lg" />
+		<Button type="submit" value="Submit" width="full" text="Submit" radius="lg" />
 	</div>
 </form>
 

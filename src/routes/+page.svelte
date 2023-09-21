@@ -91,7 +91,7 @@
 			Serving All Of Green Country
 		</h1>
 		<p
-			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 font-bold text-accent max-w-prose sm:px-12"
+			class="text-Cxs sm:text-Cbase pt-4 sm:pt-0 text-center font-custom2 p-4 font-bold text-accent max-w-prose sm:px-12"
 		>
 			Rest assured that you will receive fair treatment and get all your questions answered when you
 			request a free estimate from us!
@@ -144,7 +144,7 @@
 		</h2>
 
 		<p
-			class="w-full col-span-2 text-center font-light text-sm sm:hidden sm:text-Csm place-self-center"
+			class="w-full col-span-2 p-4 text-center font-light text-base sm:hidden sm:text-Csm place-self-center"
 		>
 			Take a look at our gallery featuring a wide variety of door installations and repairs. Our
 			collection includes residential and carriage doors with various styles to choose from. We have
@@ -170,7 +170,7 @@
 			<a class="underline decoration-primary" href="/about">About Us</a>
 		</h2>
 		<p
-			class="w-full place-self-center text-center col-span-2 sm:hidden font-light text-sm sm:text-Csm"
+			class="w-full place-self-center text-center col-span-2 sm:hidden font-light text-base sm:text-Csm"
 		>
 			We are a local, family-owned, and operated garage door company with over 28 years of
 			experience. We offer quality commercial and residential installation and repairs for doors and
@@ -199,7 +199,7 @@
 		</h2>
 
 		<p
-			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-sm sm:text-Csm"
+			class="w-full place-self-center col-span-2 text-center pl-2 sm:hidden font-light text-base sm:text-Csm"
 		>
 			Our team specializes in providing a range of services to cater to your garage door needs. From
 			repairing and installing to maintaining, we have got you covered. Additionally, we are adept

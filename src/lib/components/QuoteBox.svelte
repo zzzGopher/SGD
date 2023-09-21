@@ -4,7 +4,7 @@
 <div
 	class="w-full relative lg:w-2/3 bg-primary text-white lg:rounded-tr-3xl lg:rounded-br-3xl h-56 flex flex-col justify-evenly lg:flex-row px-4"
 >
-	<div class="flex flex-col justify-center lg:flex-row h-auto">
+	<div class="flex flex-col p-4 sm:p-0 justify-center lg:flex-row h-auto">
 		<h4 class="lg:self-center text-C2xl font-bold leading-tight lg:w-64">Free To Quote</h4>
 		<p
 			class="lg:self-center lg:leading-loose lg:w-2/3 w-full lg:text-Cbase sm:text-Csm pb-8 lg:pb-0"

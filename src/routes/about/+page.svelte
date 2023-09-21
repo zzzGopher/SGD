@@ -50,7 +50,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="row_2 realtive">
+	<div class="row_2 relative">
 		<div class="pic_container relative h-40 w-screen">
 			<img class="h-40 pic_2 mx-auto w-full object-cover" src={reactive_img.img2} alt="" />
 			<h2
@@ -67,7 +67,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="row_2 realtive">
+	<div class="row_2 relative">
 		<div class="pic_container relative h-40 w-screen">
 			<img class="h-40 mx-auto w-full object-cover" src={reactive_img.img3} alt="" />
 			<h3

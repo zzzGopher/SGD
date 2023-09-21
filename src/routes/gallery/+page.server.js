@@ -15,7 +15,8 @@ import {
 const client = contentful.createClient
 	? contentful.createClient({
 			accessToken: `${CONTENTFUL}`,
-			space: `${CONTENTFULSPACE}`
+			space: `${CONTENTFULSPACE}`,
+			fields: '?fm=webp'
 	  })
 	: contentful.default.createClient({
 			accessToken: `${CONTENTFUL}`,
@@ -23,7 +24,7 @@ const client = contentful.createClient
 	  });
 
 // fetching from contentful
-
+//TODO try sharp nodejs package to convert image formats to webP after fetching and add loading skeletons.
 export async function load() {
 	try {
 		return {
