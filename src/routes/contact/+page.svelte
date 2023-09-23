@@ -7,7 +7,8 @@
 <svelte:head>
 	<title>Contact</title>
 	<meta
-		name="To get in touch with us, you can either call or email us. We'll promptly provide you with free quotes and estimates. Our skilled technicians will address any concerns you may have and offer you comprehensive solutions."
+		name="description"
+		content="To get in touch with us, you can either call or email us. We'll promptly provide you with free quotes and estimates. Our skilled technicians will address any concerns you may have and offer you comprehensive solutions."
 	/>
 </svelte:head>
 

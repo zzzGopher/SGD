@@ -5,7 +5,6 @@
 	import { images } from '../../../../Stores/ImageStore';
 	import ImgArrNavButton from '$lib/components/imgArrNavButton.svelte';
 	import { incrementIndexID } from '$lib/utils/incrementIndexID';
-	import { onMount } from 'svelte';
 
 	export let data: any;
 
@@ -30,25 +29,24 @@
 <div
 	class="hidden min-w-full m-auto large-slider-container w-full justify-center relative md:flex gap-2 p-2"
 >
-	{#if finalImageArr.length > 1}
-		<div class="flex w-full -bottom-14 p-4 justify-center absolute">
-			<div class="flex text-white font-medium gap-8">
-				{#each finalImageArr as fir, i}
-					{#key fir}
-						<ImgArrNavButton
-							{selected}
-							text={incrementIndexID(i)}
-							id={i.toString()}
-							slideFunction={(e) => slideToNextImages(e, finalImageArr)}
-						/>
-					{/key}
-				{/each}
-			</div>
-		</div>{/if}
-
 	{#await firstImages}
-		<p class="min-h-[600px] text-4xl text-white flex items-center">loading...</p>
+		<p class="h-full w-full z-50 bg-red-600 text-4xl text-white flex items-center">loading...</p>
 	{:then Images}
+		{#if finalImageArr.length > 1}
+			<div class="flex w-full -bottom-14 p-4 justify-center absolute">
+				<div class="flex text-white font-medium gap-8">
+					{#each finalImageArr as fir, i}
+						{#key fir}
+							<ImgArrNavButton
+								{selected}
+								text={incrementIndexID(i)}
+								id={i.toString()}
+								slideFunction={(e) => slideToNextImages(e, finalImageArr)}
+							/>
+						{/key}
+					{/each}
+				</div>
+			</div>{/if}
 		{#each Images as pic, i (pic)}
 			{#if i === 0}
 				<div class="large-slider-image-container">
@@ -81,6 +79,8 @@
 				</div>
 			{/if}
 		{/each}
+	{:catch error}
+		<p class="w-full m-auto text-center text-white">something went wrong please refresh the page</p>
 	{/await}
 </div>
 

@@ -15,11 +15,11 @@
 
 	export let data: Record<string, any>;
 
-	$: $alterable = data[$doorOptions].fields[$doorOptions];
+	$: $alterable = data[$doorOptions];
 
-	$: $images = $alterable.map((img: any) => img.fields.file.url);
+	$: $images = $alterable.map((img: any) => img);
 
-	$doorColors = data.all.fields.colors;
+	$doorColors = data.doorColors;
 </script>
 
 <svelte:head>
