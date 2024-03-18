@@ -33,7 +33,7 @@
 				</button>
 				<a class="z-10" href="/">
 					<header class="text-white z-20 text-Clg uppercase whitespace-nowrap font-extralight">
-						Tulsa | Sapulpa
+						Sapulpa
 						<br class="lg:hidden" /> Garage Doors
 					</header>
 				</a>
